@@ -235,7 +235,7 @@ Le fichier a changé de nom tout seul et pris celui de la classe que vous avez c
 
 Mais maintenant, si vous entrez dans votre console "java HelloWorld" (voyez la similarité avec un "node fichier.js", commande qui nous permettait de lancer des fichiers sous Node.JS !), vous allez avoir ce message d'erreur :
 
-![document non compilé](Capture-document-modifie.png)
+![document non compilé](Document-erreur.png)
 
 Ou de manière textuelle :
 
