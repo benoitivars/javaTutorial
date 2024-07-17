@@ -68,7 +68,7 @@ Et là, deux possibilités :
 - Soit Java n'est pas installé, c'est-à-dire "not found".
 
 Voilà le message si vous avez Java d'installé (dans mon cas, je bosse sur Java 17 d'Oracle) :
- 
+
 $ java -version
 java version "17.0.11" 2024-04-16 LTS
 Java(TM) SE Runtime Environment (build 17.0.11+7-LTS-207)
@@ -90,7 +90,7 @@ Sur le site d'Oracle, vous aurez une pléthore de versions installables, sur dif
 
 Rendons-nous donc [sur leur page d'archive](https://adoptium.net/fr/temurin/archive/) et cliquons sur le menu déroulant :
 
-![menu-deroulant](menu-deroulant.png)
+![menu-deroulant](images/partie1/menu-deroulant.png)
 
 Dans le cadre de ce tuto, nous allons travailler avec des versions LTS, pour Long Term Support, ce qui veut dire que ces versions seront révisées et entretenues. Nous allons ici télécharger les LTS 17 et 21, soit une version ancienne mais stable et encore largement utilisée, et une version récente proposant les fonctionnalités les plus récentes et autour de laquelle la communauté semble se fédérer petit à petit.
 
@@ -112,7 +112,7 @@ Maintenant que vous avez deux versions de JDK sur votre machine (moi  trois), il
 
 Pour ma part, Git Bash indique ceci :
 
-![JDK 17 d'Oracle](JavaTM.png)
+![JDK 17 d'Oracle](images/partie1/JavaTM.png)
 
 Le "TM" entre parenthèse est un signe qui ne trompe pas, c'est du trademark, soit la version commerciale d'Oracle, et je veux changer ça.
 
@@ -124,37 +124,37 @@ D'abord, on va modifier la variable d'environnement qui lie Java à la version q
 
 Pour ça, dans le menu démarrer de Windows, on va d'abord chercher les **paramètres système avancés** dans le menu de démarrage pour les ouvrir, pour ensuite cliquer sur le bouton "variables d'environnement :
 
-![Trouver les paramètres système environement avec le menu de démarage](parSysAv.png)
+![Trouver les paramètres système environement avec le menu de démarage](images/partie1/parSysAv.png)
 
 *Trouver les paramètres système*
 
-![Trouver les variables d'environnement](varEnv.png)
+![Trouver les variables d'environnement](images/partie1/varEnv.png)
 
 *Le bouton des variables d'environement*
 
 Une fois dans les variables d'environement, on va chercher dans les variables systèmes si par hasard, il n'y aurait pas déjà quelque chose en rapport avec un quelconque "path", et là, j'ai eu cette énorme surprise :
 
-![variable path existante](surprise.png)
+![variable path existante](images/partie1/surprise.png)
 
 Et en sélectionnant "Path" et en cliquant sur "modifier", la surprise n'a fait que s'emplifier : sur une variable, j'ai accès à tous les langages d'installés sur ma bécane !
 
-![Les langages installés sont surlignés](languages.png)
+![Les langages installés sont surlignés](images/partie1/languages.png)
 
 En dehors de Python que j'ai aussi sur ma machine qui ne semble pas avoir de variable d'environnement ststème propre, j'ai sous "path" tous les chemins qui mènent à mes autres langages installés ! Et si vous installez automatiquement les choses comme moi, il y a de fortes chances que vous trouviez tout comme moi sous "path" toutes vos installations de Java !
 
 Là, je n'ai plus qu'à sélectionner la version de JDK 17 d'Adptium que je veux mettre en avant et à cliquer sur "déplacer vers le haut"
 
-![Sélectionner JDK 17 Adoptium](chose1.png)
+![Sélectionner JDK 17 Adoptium](images/partie1/chose1.png)
 
 A le emttre tout en haut de la liste
 
-![JDF 17 Adoptium en haut](chose2.png)
+![JDF 17 Adoptium en haut](images/partie1/chose2.png)
 
 Et à cliquer sur "ok" pour revenir aux paramètres système avancés et à cliquer sur "ok" pour les refermer.
 
 Et en fermant Git Bash et en le ré-ouvrant, en utilisant la commande "java -version", vous verrez que la version utlisée par défaut aura changé !
 
-![version de Java utilisée par défaut](openjdk.png)
+![version de Java utilisée par défaut](images/partie1/openjdk.png)
 
 Vous voyez, j'ai maintenant la version JDK 17 d'Adoptium comme version de Java utilisée par défaut sur mon ordinateur ! Et si un jour je veux utiliser la 21 par défaut, j'aurai juste à retourner dans les paramètres système avancés, dans les variables d'environnement, dans les variables système, et dans path, à mettre en avant JDK 21 d'Adoptium !
 
@@ -172,7 +172,7 @@ Reste à aborder un point : si on doit installer tellement d'extentions à VSCod
 
 Si vous ne voulez développer qu'en Java, en faire votre seul alngage matin, midi et soir pour le reste de votre vie, envisagez au moins de les tester. Mais si vous venez d'une culture plus web dev avec des tas de fichiers écrits dans différents langages, alors VSC reste indiqué, et est malgré tout, un très bon IDE avec lequel on peut déjà faire beaucoup de choses en Java.
 
-## 2. Hello, World !
+## 2. Hello, World!
 
 Maintenant qu'on a présenté Java, nous allons voir comment il fonctionne concrètement à travers le traditionnel affichage du message "Hello World !"
 
@@ -214,7 +214,7 @@ En première ligne, on voit un mot qui rappelle une notion vue en JS, les **Clas
 
 Pour commencer, créez un dossier Java dans lequel vous allez mettre ce tuto, et créez un document "helloworld.java". Pour l'instant, dans la barre de gauche sur VSCode, vous aurez ceci :
 
-![document créé](Capture-creation-fichier.png)
+![document créé](images/partie2/Capture-creation-fichier.png)
 
 Maintenant, copiez dedans le code du "Hello, World!" :
 
@@ -226,15 +226,15 @@ public class HelloWorld {
 }
 ```
 
-Et observez la zone de gauche : 
+Et observez la zone de gauche :
 
-![document-modifie](Capture-document-modifie.png)
+![document-modifie](images/partie2/Capture-document-modifie.png)
 
 Le fichier a changé de nom tout seul et pris celui de la classe que vous avez créée ! Regardez, on passe en CamelCase ! Mais pour ça, il faut remercier les extensions pour Java que propose VSCode quand on utilise le langage pour la première fois : il semble que les extensions installées pour VSCode adaptent automatiquement le nom du fichier en fonction de la classe principale qu'il contient. Si ces extensions ne sont pas installées, et que le nom du fichier n'est pas celui de la classe qu'il contient, la commande `javac nomDuFichier.java` ne fonctionnerait pas non plus. Encore une fois, ce sont les extensions qui nous retirent une épine du pied, selon toute vraisemblance.
 
 Mais maintenant, si vous entrez dans votre console "java HelloWorld" (voyez la similarité avec un "node fichier.js", commande qui nous permettait de lancer des fichiers sous Node.JS !), vous allez avoir ce message d'erreur :
 
-![document non compilé](Document-erreur.png)
+![document non compilé](images/partie2/Document-erreur.png)
 
 Ou de manière textuelle :
 
@@ -246,11 +246,11 @@ Il manque en fait une étape : le passage au Bytecode, avec la **compilation** !
 
 *javac HelloWorld.java*, ce qui va créer dans la zone de gauche le fichier "intermédiaire" *HelloWorld.class* qui es ten réalité du bytecode, le langage intermédiare entre le Java et le binaire et qui lui sera lu dans la Java Virtual Machine pour petre éxécuté. Ici, vous pouvez le voir au dessus de HelloWorld.java :
 
-![fichier class](Fichier-class.png)
+![fichier class](images/partie2/Fichier-class.png)
 
 Maintenant seulement vous pouvez entrer "java HelloWorld" dans la console et afficher le résultat !
 
-![fichier exécuté](Java-hello-world.png)
+![fichier exécuté](images/partie2/Java-hello-world.png)
 
 Et en textuel, nous avons ceci :
 
@@ -262,10 +262,12 @@ Vous voyez, comapré à JavaScript, nous avons une étape intermédiaire pour ex
 
 D'ailleurs, si vous voulez voir à quoi peut ressembler du Bytecode, ouvrez HelloWorld.class avec le Bloc Note, et observez :
 
-![Bytecode](Bytecode.png)
+![Bytecode](images/partie2/Bytecode.png)
 
 Je pense qu'on est bien d'accord, ce n'est pas "lisible" par un être humain, même vétéran dans le développement ! Tout au plus peut-on reconnaitre des expression dans un nuage de caractères incompréhensibles.
 
 Dernière remarque : avec la commande Run Code, une fois que vous avez compilé un fichier pour la première fois, tous vos fichiers ultérieurs seront automatiquement compilés et exécutés, ce qui simplifie le processus. Avec les bonnes extensions installées dans VS Code, l'étape intermédiaire de compilation devient automatique. Cependant, il est pédagogique de comprendre et d'effectuer manuellement la compilation au début, pour se rappeler que Java ne se contente pas d'exécuter directement les fichiers source.
 
 Et voilà, nous avons vu comment se présente Java dans les grandes lignes, et les différentes étapes pour lancer un fichier !
+
+## 3. Les variables
