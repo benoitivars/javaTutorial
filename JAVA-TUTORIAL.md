@@ -29,7 +29,7 @@ Java nous inculque de la rigueur, notamment par son aspect très explicite et ve
 Et comme dit plus haut, Java est un langage tout terrain, et adapté à des projets robustes. Je m'explique :
 
 1. Java est **multi-thread** : si vous vous rappelez de la métaphore de l'atelier du Père Noël de mon tutoriel sur le Back End, ça veut dire que vous avez dans l'atelier plusieurs Pères Noël bossant chacun sur une tâche particulière. Et il y a en plus autre chose à considérer avec ça : Java peut-être bloquant ou non-bloquant en fonction de vos besoins, de vos envies, de vos frameworks, ... Ça permet de faire une petite remarque matérielle, montrant que la programmation dépend aussi des architectures hardware : Java est un langage "processeur multi-cœurs-friendly", qui peut utiliser différents cœurs pour exécuter des tâches en parallèle, là où JS, par exemple, a plus une philosophie mono-cœur.
-   
+
 2. Java a aussi pour lui d'être un langage qui **compile**. Dit autrement, ça veut dire que Java, en exécutant votre code, va dans un premier temps le "traduire" en Bytecode, qui est un langage "intermédiaire" entre le Java et le binaire. Ensuite, si votre système a, ou qu'en bon.ne développeur.se vous avez installé la Java Virtual Machine (et spoiler alert, en général, quand vous installez Java, la JVM vient aussi avec), celle-ci traduira le Bytecode en instructions intelligibles pour votre système. Dit autrement, si vous développez en Java sur Windows, votre script sera exécutable dans des environnements Android, Linux, macOS, en minimisant les déconvenues !
 
 Mais d'ailleurs, qu'est-ce qui a mené à développer Java, et d'où vient-il ?
@@ -62,7 +62,7 @@ La première étape consiste à vérifier si vous avez Java installé sur votre 
 
 java -version
 
-Et là, deux possibilités : 
+Et là, deux possibilités :
 
 - Soit tout va bien dans le meilleur des mondes et vous avez Java d'installé. La console vous dira également quelle est la version "par défaut" que votre système utilise (sachant qu'on peut avoir plusieurs versions d'un langage installées sur une machine).
 - Soit Java n'est pas installé, c'est-à-dire "not found".
@@ -126,11 +126,11 @@ Pour ça, dans le menu démarrer de Windows, on va d'abord chercher les **param�
 
 ![Trouver les paramètres système environement avec le menu de démarage](images/partie1/parSysAv.png)
 
-*Trouver les paramètres système*
+Trouver les paramètres système
 
 ![Trouver les variables d'environnement](images/partie1/varEnv.png)
 
-*Le bouton des variables d'environement*
+Le bouton des variables d'environement
 
 Une fois dans les variables d'environement, on va chercher dans les variables systèmes si par hasard, il n'y aurait pas déjà quelque chose en rapport avec un quelconque "path", et là, j'ai eu cette énorme surprise :
 
@@ -172,7 +172,7 @@ Reste à aborder un point : si on doit installer tellement d'extentions à VSCod
 
 Si vous ne voulez développer qu'en Java, en faire votre seul alngage matin, midi et soir pour le reste de votre vie, envisagez au moins de les tester. Mais si vous venez d'une culture plus web dev avec des tas de fichiers écrits dans différents langages, alors VSC reste indiqué, et est malgré tout, un très bon IDE avec lequel on peut déjà faire beaucoup de choses en Java.
 
-## 2. Hello, World!
+## 2. "Hello, World!"
 
 Maintenant qu'on a présenté Java, nous allons voir comment il fonctionne concrètement à travers le traditionnel affichage du message "Hello World !"
 
@@ -271,3 +271,42 @@ Dernière remarque : avec la commande Run Code, une fois que vous avez compilé 
 Et voilà, nous avons vu comment se présente Java dans les grandes lignes, et les différentes étapes pour lancer un fichier !
 
 ## 3. Les variables
+
+Après avoir vu comment se présente Java et sa logique, nous allons pouvoir (re)voir certaines bases de la programmation, en commençant par les **variables** !
+
+### 3.1. Variables, constantes, valeurs et mémoire
+
+En effet, la programmation, c'est demander à son ordinateur de manipuler des valeurs, soit en effectuant des opérations dessus, soit en les combinant avec d'autres valeurs, soit en effectuant des opérations données en fonction de certaines conditions, ... la liste des possibilités est longue. Toujours est-il que pour pouvoir travailler, votre ordinateur a besoin de quelque chose, ce que nous appelons les variables.
+
+Comparez l'interaction entre votre ordinateur et des variables comme à celle d'un moteur avec du carburant : quand on met du carburant dans un moteur, on peut le démarrer et ce dernier fait toute une série d'opérations qui transforment à terme le carburant en gaz d'échappement, et peut faire avancer le véhicule dans lequel il se trouve. Sans carburant, vous aurez beau avoir le moteur le mieux calibré du monde, pas grand chose va se passer. D'ailleurs, gardez cette métaphore du moteur à l'esprit, elle sera utile quand on verra ce que sont `objets` et les `classes`.
+
+Et il existe tout un tas de variables sur lesquelles Java peut travailler : des nombres entiers, des nombres à virgule, des suites de caractères non numériques, des valeurs vrai ou faux, des collections, ensembles d'autres variables, ce qu'on appelle des objets, ... et chacune de ces variables peut subir toute une gamme d'opérations possibles, spécifiques à son type.
+
+Mais toutes ces valeurs, nécessaires pour faire tourner votre ordinateur, il faut bien les stocker quelque part, non ? Elles ne peuvent pas flotter dans l'air en apesanteur. Votre  ordinateur doit savoir où les trouver. Et ce lieu de stockage est la **mémoire**, qui se décompose en deux volets :
+
+- Le *disque dur*, qui stocke l'information de manière durable, même si on ferme le programme et qu'on éteint l'ordinateur; on peut la retrouver aisément.
+
+- La *RAM* (Random Access Memory), qu'on appelle la mémoire vive, c'est à dire celle de travail, où l'information est mémorisée de manière temporaire.
+
+Pour filer la métaphore, c'est comme résoudre vos premières équations du premier degré, ou appliquer les règles de priorité en mathématiques : si le processus pour résoudre une équation ou appliquer la priorité des opérations est durablement inscrit dans votre mémoire long terme, la réponse de votre équation ou de votre problème de résolution des opérations ne reste que temporairement dans votre mémoire, le temps de l'inscrire sur la feuille de réponse. Et d'ailleurs, c'est plutôt une bonne chose que vous ne vous rappeliez pas de toutes les réponses de tous les problèmes que vous avez dû résoudre durant votre scolarité, la vie serait vite devenue invivable avec autant d'informations somme toute peu utiles au long terme...
+
+Pour Java ou tout autre langage de programmation, c'est pareil : à moins que vous ne choisissiez de stocker les réponses (ou devrions-nous dire les *output*) aux différents processus de manipulation de données (qu'on appelle aussi *algorithmes*), elles seront perdues dès qu'on ferme le programme qui les fait tourner.
+
+Autre point un peu sournois : je vous parle depuis tout à l'heure de variables. J'aurais dû en fait vous parler de **valeurs**, car toutes ne sont pas *variables*, mais *constantes*.
+
+Pour comprendre la différence entre une constante et une variable, passons par les mathématiques, avec ces cinq équations du premier degré à une inconnue niveau collège/début de secondaire :
+
+1. \(3x + 5 = 20\)
+2. \(2x - 4 = 10\)
+3. \(4x + 2 = 14\)
+4. \(x - 7 = 5\)
+5. \(5x + 3 = 18\)
+
+Si vous résolvez ces cinq équations, vous verrez que la valeur de `x` n'est pas identique dans toutes les équations. En fait, `x` est ce qu'on appelle une "variable", sa valeur peut changer en fonction de l'opération concernée. En revanche, les chiffres 3, 4, 7, 18, 20, etc. sont eux des *constantes* car leur valeur ne change pas : 3 vaudra toujours 3, et ne deviendrait en aucun cas un 7, un 3,2 ou un -5.
+
+En informatique, une *variable* est donc un espace de stockage, de mémoire, auquel on assigne une valeur qui est susceptible de changer. Une *constante*, en revanche, est un espace de stockage, de mémoire qui se voit assigner une valeur qui ne changera pas.
+
+Mais dans le reste de ce tuto, par commodité, j'utiliserai le terme `variable` pour parler indistinctement de variables et constantes, en comptant sur le fait que le contexte permettra de déterminer sans peine la situation concernée. Si nécessaire, des clarifications et rappels seront faits.
+
+### 3.2. Définir une variable et lui assigner une valeur
+
