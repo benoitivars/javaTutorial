@@ -44,11 +44,11 @@ Et si Java a d'abord été pensé pour les composants embarqués, le fait qu'il 
 
 De plus, Java arrivait aussi à faire des requêtes asynchrones, via une classe spécifique de Java, *servlet* (un programme Java qui s'exécute sur un serveur et permet de gérer des requêtes et des réponses), permettant alors d'interagir avec des bases de données et des API. À une époque où JavaScript avait des problèmes de compatibilité entre navigateurs, Java était le langage pour les requêtes asynchrones avec un serveur. Mais le temps passant, JavaScript s'améliorant, HTML et CSS prenant en charge de plus en plus de fonctionnalités, le recours à des applets Java est devenu de plus en plus encombrant et contre-performant.
 
-Par contre, Java a réussi sa "reconversion", étant encore utilisé côté serveur, permettant d'encapsuler le code dans des classes, ce qui est appréciable dans le cadre de sites et d'applications web sensibles, comme des sites internet bancaires ou d'assurance, où il s'agit de ne pas diffuser de données sensibles ou de donner involontairement accès à l'architecture de son programme, exposant au grand jour les failles potentielles.
+Par contre, Java a réussi sa "reconversion", étant encore utilisé côté serveur, permettant d'encpasuler le code dans des classes, ce qui est appréciable dans le cadre de sites et d'applications web sensibles, comme des sites internet bancaires ou d'assurance, où il s'agit de ne pas diffuser de données sensibles ou de donner involontairement accès à l'architecture de son programme, exposant au grand jour les failles potentielles.
 
 Enfin, Java reste un programme central dans le développement d'applications et programmes multi-plateformes, en particulier sur Android, où il est un des langages, si pas le langage phare qui fait tourner la plupart des applications sur nos téléphones.
 
-Cet exposé historique a pour but de montrer comment Java est né, en répondant à quels besoins, à quel point il est encore utilisé aujourd'hui, des domaines très variés, y compris en web où sans prétendre faire de l'ombre à PHP, il est néanmoins incontournable dans les situations où la sécurité est primordiale.
+Cet exposé historique a pour but de montrer comment Java est né, en répondant à qules besoins, à quel point il est encore utilisé aujourd'hui, des domaines très variés, y compris en web où sans prétendre faire de l'ombre à PHP, il est néanmoins incontournable dans les situations où la sécurité est primordiale.
 
 Maintenant que nous connaissons les spécificités de Java, son histoire, et comment il se situe par rapport à d'autres langages, attaquons son installation !
 
@@ -308,5 +308,46 @@ En informatique, une *variable* est donc un espace de stockage, de mémoire, auq
 
 Mais dans le reste de ce tuto, par commodité, j'utiliserai le terme `variable` pour parler indistinctement de variables et constantes, en comptant sur le fait que le contexte permettra de déterminer sans peine la situation concernée. Si nécessaire, des clarifications et rappels seront faits.
 
-### 3.2. Définir une variable et lui assigner une valeur
+### 3.2. Déclarer une variable et lui assigner une valeur
 
+Déclarer une variable, c'est le moment où on va dire à notre ordinateur qu'on veut stocker une valeur dans sa mémoire. Ce serait comme lui dire "utilise un bout de tes capacités de mémoire pour retenir cette variable et la valeur que je vais lui donner". Et toutes les variables ont des noms, qu'on peut choisir, avec beaucoup de latitude. Cependant, il y a quelques règles à suivre :
+
+- Un nom de variable ne peut pas commencer par un chiffre
+- Un nom de variable ne peut pas contenir d'espace
+- Un nom de variable ne peut pas être un mot-clé réservé du langage Java, comme "public", "static", "void", et j'en passe : Java en a besoin, pour lui, pour bien tourner. On ne peut pas les lui emprunter.
+- Un nom de variable, par convention, s'écrit en cammelCase. Vous pouvez choisir de procéder autrement, mais ce serait contraire aux bonnes pratiques du développement Java.
+
+S'il existe d'autres règles, celles-ci représentent les principales à suivre, les quelques autres s'articulant autour de celles-ci.
+
+Une autre chose à prendre en compte, c'est que Java, contrairement à JavaScript ou à Python, est ce qu'on appelle un **langage à typage statique**, ce qui veut dire qu'on ne peut pas changer le type d'une variable en réassignant sa valeur comme on peut le faire en JavaScript ou Python qui sont eux des **langages à typage dynamique**.
+
+Par exemple, en Javascript, on pouvait créer une variable `ageDuCapitaine` à laquelle on donnait la valeur d'un nombre entier, et on pouvait ensuite réassigner la valeur si on voulait à celle d'un booléen ou encore d'une string (je rappelle un peu plus bas les différents types de variables, pas de panique), tandis qu'en Java, non seulement on doit préciser à l'avance le type de valeur qui sera celui de la variable et une fois cette assignation faite, on ne pourra pas changer de type de variable.
+
+Concrètement, en JavaScript, on pouvait faire ceci :
+
+```Javascript
+let ageDuCapitaine = 45;  // Initialement un nombre
+ageDuCapitaine = true;    // Maintenant un booléen
+ageDuCapitaine = "Robert"; // Maintenant une chaîne de caractères
+```
+
+Comme vous voyez, en JavaScript, on peut déclarer notre variable comme un nombre, puis lui assigner une valeur de type boolen, puis une valeur de type string, sans que ça ne cause aucun problème.
+
+En revanche, essayez ça en Java, et vous aurez des erreurs de compilation quand vous voudrez donner des valeurs de types différents à une variable qui a été déclarée, par exemple, comme un nombre entier :
+
+```Java
+int ageDuCapitaine = 45;   // Initialement un nombre
+ageDuCapitaine = 27;      // Réassignation à un autre nombre
+// ageDuCapitaine = true; // Erreur de compilation
+// ageDuCapitaine = "Robert"; // Erreur de compilation
+```
+
+On peut changer l'âge du capitaine, tant que ça reste un nombre entier. *A noter : j'ai fait l'impasse dans l'exemple ci-dessus en Java sur le fait de faire une classe publique comme c'est en principe d'usage en Java. Je voulais surtout donner un exemple illustratif théorique, plutôt que de présenter les choses comme elles le seraient en situation réelle, afin de ne pas "enterrer" ce que je veux illustrer avec la syntaxe des classes de Java qui peut être rébarbative au début*
+
+Le typage dynamique et le typage statique ont chacun leurs avantages et inconvénients :
+
+- Le typage dynamique rend le fait de coder rapide, et donc de voir des projets se développer rapidement. Cependant, des erreurs peuvent vite passer sous le radar et donc rendre le débogage difficile.
+
+- Le typage statique peut être très rébarbatif et et rendre le développement bien plus lent. Mais une fois le projet en place, il sera bien plus stable, facile à relire et à débuguer, vu que tout est explicité et donc les erreurs bien plus facilement repérables.
+
+C'est un peu comme la fable du Lièvre et de la Tortue de Jean de La Fontaine : le lièvre va bien plus vite, a des performances bien plus impressionnantes que la tortue, mais il est aussi bien plus sujet à la déstabilisation et au fait de partir dans le décor. Java, lui, et comme la tortue : lent, très lent, mais il traverse la ligne d'arrivée de manière bien plus sûre, sans se perdre dans le décor.
