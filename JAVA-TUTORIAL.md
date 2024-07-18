@@ -306,7 +306,7 @@ Si vous résolvez ces cinq équations, vous verrez que la valeur de `x` n'est pa
 
 En informatique, une *variable* est donc un espace de stockage, de mémoire, auquel on assigne une valeur qui est susceptible de changer. Une *constante*, en revanche, est un espace de stockage, de mémoire qui se voit assigner une valeur qui ne changera pas.
 
-Mais dans le reste de ce tuto, par commodité, j'utiliserai le terme `variable` pour parler indistinctement de variables et constantes, en comptant sur le fait que le contexte permettra de déterminer sans peine la situation concernée. Si nécessaire, des clarifications et rappels seront faits.
+Mais dans le reste de ce tuto, par commodité, j'utiliserai le terme `variable` pour parler indistinctement de variables et constantes, en comptant sur le fait que le contexte permettra de déterminer sans peine la situation concernée. Si nécessaire, des clarifications et rapples seront faits.
 
 ### 3.2. Déclarer une variable et lui assigner une valeur
 
@@ -319,6 +319,8 @@ Déclarer une variable, c'est le moment où on va dire à notre ordinateur qu'on
 
 S'il existe d'autres règles, celles-ci représentent les principales à suivre, les quelques autres s'articulant autour de celles-ci.
 
+#### 3.2.1. Le typage statique, particularité de Java
+
 Une autre chose à prendre en compte, c'est que Java, contrairement à JavaScript ou à Python, est ce qu'on appelle un **langage à typage statique**, ce qui veut dire qu'on ne peut pas changer le type d'une variable en réassignant sa valeur comme on peut le faire en JavaScript ou Python qui sont eux des **langages à typage dynamique**.
 
 Par exemple, en Javascript, on pouvait créer une variable `ageDuCapitaine` à laquelle on donnait la valeur d'un nombre entier, et on pouvait ensuite réassigner la valeur si on voulait à celle d'un booléen ou encore d'une string (je rappelle un peu plus bas les différents types de variables, pas de panique), tandis qu'en Java, non seulement on doit préciser à l'avance le type de valeur qui sera celui de la variable et une fois cette assignation faite, on ne pourra pas changer de type de variable.
@@ -327,11 +329,12 @@ Concrètement, en JavaScript, on pouvait faire ceci :
 
 ```Javascript
 let ageDuCapitaine = 45;  // Initialement un nombre
+ageDuCapitaine = 27;      // Réassignation à un autre nombre
 ageDuCapitaine = true;    // Maintenant un booléen
 ageDuCapitaine = "Robert"; // Maintenant une chaîne de caractères
 ```
 
-Comme vous voyez, en JavaScript, on peut déclarer notre variable comme un nombre, puis lui assigner une valeur de type boolen, puis une valeur de type string, sans que ça ne cause aucun problème.
+Comme vous voyez, en JavaScript, on peut déclarer notre variable comme un nombre, puis lui assigner une autre valeur numérique puis une valeur de type booléen, puis une valeur de type string, sans que ça ne cause aucun problème.
 
 En revanche, essayez ça en Java, et vous aurez des erreurs de compilation quand vous voudrez donner des valeurs de types différents à une variable qui a été déclarée, par exemple, comme un nombre entier :
 
@@ -342,7 +345,7 @@ ageDuCapitaine = 27;      // Réassignation à un autre nombre
 // ageDuCapitaine = "Robert"; // Erreur de compilation
 ```
 
-On peut changer l'âge du capitaine, tant que ça reste un nombre entier. *A noter : j'ai fait l'impasse dans l'exemple ci-dessus en Java sur le fait de faire une classe publique comme c'est en principe d'usage en Java. Je voulais surtout donner un exemple illustratif théorique, plutôt que de présenter les choses comme elles le seraient en situation réelle, afin de ne pas "enterrer" ce que je veux illustrer avec la syntaxe des classes de Java qui peut être rébarbative au début*
+On peut changer l'âge du capitaine, tant que ça reste un nombre entier. *A noter : j'ai fait l'impasse dans l'exemple ci-dessus en Java sur le fait de faire une classe publique comme c'est en principe d'usage en Java. Je voulais surtout donner un exemple illustratif théorique, plutôt que de présenter les choses comme elles le seraient en situation réelle, afin de ne pas "enterrer" ce que je veux illustrer avec la syntaxe des classes de Java qui peut être rébarbative au début. Nous verrons plus bas, en situation réelle, qu'assigner comme valeur un autre type de variable à ce que nous avions initialement établi amène à des erreurs de compilation.*
 
 Le typage dynamique et le typage statique ont chacun leurs avantages et inconvénients :
 
@@ -351,3 +354,62 @@ Le typage dynamique et le typage statique ont chacun leurs avantages et inconvé
 - Le typage statique peut être très rébarbatif et et rendre le développement bien plus lent. Mais une fois le projet en place, il sera bien plus stable, facile à relire et à débuguer, vu que tout est explicité et donc les erreurs bien plus facilement repérables.
 
 C'est un peu comme la fable du Lièvre et de la Tortue de Jean de La Fontaine : le lièvre va bien plus vite, a des performances bien plus impressionnantes que la tortue, mais il est aussi bien plus sujet à la déstabilisation et au fait de partir dans le décor. Java, lui, et comme la tortue : lent, très lent, mais il traverse la ligne d'arrivée de manière bien plus sûre, sans se perdre dans le décor.
+
+Ceci étant dit, voyons maintenant, in situ, comment nous déclarons nos variables, et donc les différents types de variables, en commençant par les variables dites "primitives".
+
+#### 3.2.2. Les variables primitives
+
+Les types de variables primitifs sont des variables considérées comme "simples". Il s'agit des booléens, caractères uniques, chiffres et chiffres à virgule, soit les valeurs "vrai" ou "faux". Mais même là, on va vite voir que Java, en tant que langage de "niveau moyen", prend en compte des choses auxquelles on ne penserait même pas avec des langages de haut niveau, comme JavaScrit ou Python. Nous allons ici voir comment déclarer chacun de ces types de variables... et les spécificités allant avec.
+
+##### 3.2.2.1. Les booléens
+
+C'est sans doute la valeur la plus simple, y compris dans la vie de tous les jours. Il s'agit de l'alternative entre "oui" et "non", "vrai" ou "faux". il s'agit d'une notion a priori simplissime, mais en développement, énormément de choses dans un code, si pas la majorité, en dépend. A vrai dire, la base même de l'informatique, le langage binaire fait de 0 et de 1 est une suite de booléens. Et si on se resitue dans des langages de programmation que nous arrivons à lire et comprendre, les booléens sont la base même des cascades de conditions qui se vérifient ou non que nous écrivons (nous reviendrons plus bas sur cette notion de *condition*).
+
+Mais voyons en Java comment on déclare une variable booléenne, en reprenant notre classe HelloWorld qui se situe dans notre fichier java éponyme et stockons dedans une variable qu'on va appeler "capitainePresent", pour savoir s'il est sur le bateau.
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        boolean capitainePresent;       
+    }
+}
+```
+
+Vous voyez, pour déclarer une variable, on indique d'abord son type, ici `boolean` et derrière on met le nom de la variable. Maintenant, on va lui assigner la valeur "true" (en opposition à la valeur "false") :
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        boolean capitainePresent = true;       
+    }
+}
+```
+
+Nous avons là une valeur assignée à notre variable de type booléen `capitainePrésent`. Notez que vous pouvez déclarer une variable de n'importe quel type sans lui assigner la moindre valeur, qu'elle prendrait par la suite, avec l'exécution d'un quelconque algorithme, comme dans l'exemple plus haut.
+
+##### 3.2.2.2. Les charactères
+
+La seconde variable primitive que nous allons voir sont les charactères uniques, ou en Java, les `char`. Si vous avez fait du JavaScript (c'est probablement le cas, dans la logique de ce tuto), vous pouvez légitimement vous demander pourquoi il y a une variable "char", là où en JS, qu'on ait un caractère ou plus, on utilise "string". Tout ça vient probablement du fait que Java se base sur le C++, un langage bas niveau qui prend aussi en compte la responsabilité de la gestion de la mémoire par l'utilisateur.
+
+Rappelez-vous que Java date du début des années 1990, et que ses concepteurs avaient des soucis de gestion de mémoire avec le C++. Il faut bien se rappeler qu'à l'époque, alors que nos machines actuelles ont des centaines de gigabytes, voire des terabytes de mémoire disponibles sur disque dur et des mémoires vives ultraperformantes, à l'époque c'était une autre paire de manche. Les ordinateurs les plus performants d'alors n'auraient probabablement pas l'espace disponible pour stocker un film d'une heure et demie actuel en HD.
+
+Et il en allait de même quand on écrivait un programme : le moindre caractère enregistré, c'est une part de mémoire occupée. Et le problème était tellement aigu qu'on en était à un point où on distinguait les caractères uniques des chaines de caractères.
+
+Si Java a innové en gérant la mémoire de manière autonome sans plus en faire une responsabilité du développeur, l'existence du type de variable `char` est un souvenir de cette époque lointaine, même si aujourd'hui, on peut encore s'en servir, par exemple, dans des registres nationaux pour enregistrer le genre d'une personne, Homme ou Femme.
+
+Par exemple, on va ajouter la variable de type `char` à notre classe HellWorld en décrétant que notre capitaine est une femme, avec la variable "char genreCaptaine = 'F'" :
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        boolean capitainePresent = true;     
+        char genreCapitaine = 'F';  
+    }
+}
+```
+
+Notez bien, on utilise des guillemets simples en Java pour les variables de type char, on réserve les guillemets doubles pour les variables de type string.
+
