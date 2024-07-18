@@ -389,9 +389,9 @@ public class HelloWorld {
 
 Nous avons là une valeur assignée à notre variable de type booléen `capitainePrésent`. Notez que vous pouvez déclarer une variable de n'importe quel type sans lui assigner la moindre valeur, qu'elle prendrait par la suite, avec l'exécution d'un quelconque algorithme, comme dans l'exemple plus haut.
 
-##### 3.2.2.2. Les charactères
+##### 3.2.2.2. Les caractères
 
-La seconde variable primitive que nous allons voir sont les charactères uniques, ou en Java, les `char`. Si vous avez fait du JavaScript (c'est probablement le cas, dans la logique de ce tuto), vous pouvez légitimement vous demander pourquoi il y a une variable "char", là où en JS, qu'on ait un caractère ou plus, on utilise "string". Tout ça vient probablement du fait que Java se base sur le C++, un langage bas niveau qui prend aussi en compte la responsabilité de la gestion de la mémoire par l'utilisateur.
+La seconde variable primitive que nous allons voir sont les caractères uniques, ou en Java, les `char`. Si vous avez fait du JavaScript (c'est probablement le cas, dans la logique de ce tuto), vous pouvez légitimement vous demander pourquoi il y a une variable "char", là où en JS, qu'on ait un caractère ou plus, on utilise "string". Tout ça vient probablement du fait que Java se base sur le C++, un langage bas niveau qui prend aussi en compte la responsabilité de la gestion de la mémoire par l'utilisateur.
 
 Rappelez-vous que Java date du début des années 1990, et que ses concepteurs avaient des soucis de gestion de mémoire avec le C++. Il faut bien se rappeler qu'à l'époque, alors que nos machines actuelles ont des centaines de gigabytes, voire des terabytes de mémoire disponibles sur disque dur et des mémoires vives ultraperformantes, à l'époque c'était une autre paire de manche. Les ordinateurs les plus performants d'alors n'auraient probabablement pas l'espace disponible pour stocker un film d'une heure et demie actuel en HD.
 
@@ -412,4 +412,3 @@ public class HelloWorld {
 ```
 
 Notez bien, on utilise des guillemets simples en Java pour les variables de type char, on réserve les guillemets doubles pour les variables de type string.
-
