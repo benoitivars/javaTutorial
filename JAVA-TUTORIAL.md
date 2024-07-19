@@ -494,10 +494,8 @@ Les nombres flottants sont des nombres à virgule, c'est-à-dire des nombres non
 
 En Java, les nombres flottants sont représentés par deux types de variables spécifiques : float et double.
 
-Les float sont des nombres à virgule flottante qui tiennent sur 32 bits (4 octets). Ils peuvent représenter des valeurs avec environ 7 chiffres significatifs. Cependant, il est rare de devoir afficher autant de chiffres après la virgule en pratique.
-Les double, quant à eux, occupent 64 bits (8 octets) et peuvent représenter des valeurs avec environ 15 chiffres significatifs. Cela permet une plus grande précision et une plage de valeurs plus large.
-Il y a une particularité pour les float : non seulement on les déclare comme "float", mais en plus, on doit ajouter un "f" à la fin de leur valeur numérique pour que Java comprenne bien que c'est un float, et donc qu'il doit être encodé sur 32 bits.
-
+- Les `float` sont des nombres à virgule flottante qui tiennent sur 32 bits (4 octets). Ils peuvent représenter des valeurs avec environ 7 chiffres significatifs. Il est important de noter que bien qu'un float puisse théoriquement représenter des valeurs entières de grande taille, son utilisation principale est pour les nombres à virgule flottante avec une précision limitée.
+- Les `double`, quant à eux, occupent 64 bits (8 octets) et peuvent représenter des valeurs avec environ 15 chiffres significatifs. Cela permet une plus grande précision et une plage de valeurs plus large.
 Par exemple : la température actuelle, mettons 27,4°C, s'encode comme suit :
 
 ```Java
