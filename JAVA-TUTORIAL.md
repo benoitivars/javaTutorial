@@ -412,3 +412,79 @@ public class HelloWorld {
 ```
 
 Notez bien, on utilise des guillemets simples en Java pour les variables de type char, on réserve les guillemets doubles pour les variables de type string.
+
+##### 3.2.2.3. Les nombres entiers
+
+Les choses deviennent un peu plus complexes ici car nous allons parler de la façon dont la mémoire d'un ordinateur fonctionne. L'unité de base de la mémoire est le **bit**, qui peut enregistrer une valeur binaire, 0 ou 1 (rappelant les booléens). Tout ce que nous avons sur notre ordinateur, que ce soit un document, un fichier de code, une vidéo, un jeu ou un programme comme un navigateur internet, est finalement enregistré sur le disque dur sous la forme d'une série de 0 et de 1.
+
+Un groupe de huit bits forme un **octet** (ou **byte** en anglais). Avec un octet, nous avons 2^8 (256) possibilités pour enregistrer une valeur. Ces octets sont les unités de mesure pour tout enregistrement. Lorsque nous parlons de mégaoctets, gigaoctets ou téraoctets, nous parlons de millions, milliards ou trillions d'octets respectivement.
+
+Dans les années 1990, James Gosling et ses collègues n'avaient pas les capacités de stockage que nous avons aujourd'hui, chaque octet était précieux. Pour cette raison, Java propose trois types de variables pour enregistrer des nombres entiers, en fonction de leur grandeur :
+
+- `int` : pour les nombres stockés sur 32 bits (4 octets), allant de -2,147,483,648 à 2,147,483,647.
+- `long` : pour les nombres stockés sur 64 bits (8 octets), allant de -9,223,372,036,854,775,808 à 9,223,372,036,854,775,807. Utilisé pour des valeurs très grandes.
+- `short` : pour les nombres stockés sur 16 bits (2 octets), allant de -32,768 à 32,767. Utilisé pour des valeurs plus petites.
+- `byte` : pour les nombres stockés sur 8 bits (1 octet), allant de -128 à +127. Utilisé pour les très petites valeurs.
+
+Si les capacités de mémoire actuelles de nos apareils semblent rendre obsolètes les nuances entre ces trois valeurs, les choses sont enr éalité un brin plus complexe : quand on déclare une variable "long", l'ordinateur va directement "réserver" 8 octets de mémoire pour votre variable, que vous décidiez de mettre dedans une valeur immense correpondant à plus de 4 octets ou un nombre minuscule ne dépassant pas les centaines, ce qui représenterait une forme de gaspillage. Et si une ou deux pauvres variables mal assignées ne posent aps problème, à la longue, dans des scripts massifs enregistrant beaucoup de nombres ou au contraire pour les programmes disposant de peu de mémoire pour de tout petits dispositifs comme la programmation d'un lavelinge où l'espace mémoire est très limité, les choses peuvent vite devenir casse-gueule par l'effet exponentiel du gaspillage de mémoire.
+
+Et si on parle de la mémoire, il ne faut pas oublier le processeur, qui lui fait tourner votre ordinateur, fait tous les calculs nécessaires pour le faire marcher et exécuter correctement les programme, qui lui va aussi apprécier que vous utilisiez les bonnes valeurs de variables, car manipulant un short (2 octets) plutôt qu'un long (8 octets, même si la valeur numérique contenue ne dépasse pas la centaine), il sera plus dacile et efficace.
+
+Enfin, c'est aussi une bonne chose pour vous, en écrivant votre code : utiliser le bon type de variable permet d'avoir une idée plus claire de ce que vous voulez faire et rendra votre code plus lisible et compréhensible.
+
+Reprennons notre classe HelloWorld, que nous développons. Maintenant, en plus de stocker des variables non utilisées directement, nous allons afficher d'autres messages en plus de "Hello, world!", reprenant la présence du capitaine sur le vesseau, son genre, et d'autres données numériques :
+
+```Java
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Présence du capitaine
+        boolean capitainePresent = true;
+        
+        // Genre du capitaine
+        char genreCapitaine = 'F';
+
+        // Âge du capitaine (nombre entier de type int)
+        int ageCapitaine = 45;
+
+        // Nombre de missions complétées (nombre entier de type short)
+        short missionsCompletees = 256;
+
+        // Nombre de membres d'équipage (nombre entier de type byte)
+        byte membresEquipage = 100;
+
+        // Distance parcourue par le vaisseau en années-lumière (nombre entier de type long)
+        long distanceParcourue = 123456789012345L;
+
+        // Affichage des informations du capitaine
+        System.out.println("Hello, World!");
+        System.out.println("Capitaine présent : " + capitainePresent);
+        System.out.println("Genre du capitaine : " + genreCapitaine);
+        System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
+        System.out.println("Missions complétées : " + missionsCompletees);
+        System.out.println("Membres d'équipage : " + membresEquipage);
+        System.out.println("Distance parcourue : " + distanceParcourue + " années-lumière");
+    }
+}
+```
+
+D'ailleurs compilez et exécutez le code et voyez ce que ça donne en console :
+
+![Script non compilé en UTF8](images/partie3/JavacSansUTF8.png)
+
+Et là, vous remarquerez une chsoe, les accents ne apssent pas ! Ce n'est pas un si gros soucis que ça. En fait, dans sa compilation en fichier Bytecode, JDK a oublié de prendre en compte l'UTF-8, qui est en quelque sorte une norme d'encodage des caractères qui supporte les accents et peut les afficher une fois un code exécuté. Pour que les chsoes se passent comme voulue, rien de plus simple.
+
+D'abord, on s'assure que le fichier HelloWrld.java est bien encodé en UTF-8, en regardant dans le coin en bas à droite de VSCode :
+
+![Vérification de l'encodage UTF8](images/partie3/VerifUTF8.png)
+
+Si ce n'est pas le cas, cliquez dessus, puis dans le menu en haut de VSC sur "Rouvrir avec l'encodage" et cliquez, dans l'énorme choix proposé, sur "UTF-8" :
+
+![Une partie des encodages possibles...](images/partie3/EncodagesPossibles.png)
+
+Maintenant, on retente la compilation en javac, mais avec une eptite instruction en plus pour bien préciser qu'on utilise lors de la compilation l'encodage UTF-8 comme ceci : `$ javac -encoding UTF-8 HelloWorld.java`et alors le script nous sortira nos lignes de textes avec les accents pris en charge :
+
+![Compilation en prenant en compte l'UTF8](images/partie3/JavacAvecUTF8.png)
+
+Ceci est un petit excursus en plus, mais qui nous permet de nous familiariser encore plus avec des subtilités Java, et surtout, de voir indirectement la variable de type `string` que nous expliciterons plus bas.
+
+##### 3.2.2.4. Les nombres à virgule, dits "flotants"
