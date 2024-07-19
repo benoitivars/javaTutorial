@@ -166,7 +166,7 @@ Et toutes ces extentions sont réunies dans un "pack", le "Extention pack for Ja
 
 Avec tout ça, vous serez paré pour aprtir à la découverte du Java !
 
-##### Des alternatives à VSC ?
+##### 1.3.5.1. Des alternatives à VSC ?
 
 Reste à aborder un point : si on doit installer tellement d'extentions à VSCode pour faire tourner Java comme il faut, il y a bien une raison, c'est que de base, VSC n'a pas de vocation à faire tourner du Java. Et pour être tout à fait sérieux, il y a des environnements de développements intégrés qui ne s'occupent que de Java, et bien mieux que VSC, dans la mesure où ils sont conçus et calibrés pour. Pour enciter quelques uns, il y a IntelliJ IDEA, Eclipse et NetBeans pour les plus connus.
 
@@ -488,3 +488,67 @@ Maintenant, on retente la compilation en javac, mais avec une eptite instruction
 Ceci est un petit excursus en plus, mais qui nous permet de nous familiariser encore plus avec des subtilités Java, et surtout, de voir indirectement la variable de type `string` que nous expliciterons plus bas.
 
 ##### 3.2.2.4. Les nombres à virgule, dits "flotants"
+
+Les nombres flotants sont ce qu'on appelle les nombres à virgules, qui ne sont pas des entiers, et qu'on peut aussié crire sous forme de fractions. Par exemple, 3,5 peut s'écrire 7/2.
+Les nombres flottants sont des nombres à virgule, c'est-à-dire des nombres non entiers, qui peuvent également être écrits sous forme de fractions. Par exemple, 3,5 peut s'écrire 7/2.
+
+En Java, les nombres flottants sont représentés par deux types de variables spécifiques : float et double.
+
+Les float sont des nombres à virgule flottante qui tiennent sur 32 bits (4 octets). Ils peuvent représenter des valeurs avec environ 7 chiffres significatifs. Cependant, il est rare de devoir afficher autant de chiffres après la virgule en pratique.
+Les double, quant à eux, occupent 64 bits (8 octets) et peuvent représenter des valeurs avec environ 15 chiffres significatifs. Cela permet une plus grande précision et une plage de valeurs plus large.
+Il y a une particularité pour les float : non seulement on les déclare comme "float", mais en plus, on doit ajouter un "f" à la fin de leur valeur numérique pour que Java comprenne bien que c'est un float, et donc qu'il doit être encodé sur 32 bits.
+
+Par exemple : la température actuelle, mettons 27,4°C, s'encode comme suit :
+
+```Java
+float températureVaisseau = 27.4f;
+``` 
+
+Et pour les double, pas besoin d'ajouter ce "f" :
+
+```Java
+double températureVideSpacial = 0.00000000000000000000000000000000000000001; 
+```
+
+Ajoutons ces deux valeurs à notre classe d'exemple et voyons ce que ça donne :
+
+```Java
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Présence du capitaine
+        boolean capitainePresent = true;
+        
+        // Genre du capitaine
+        char genreCapitaine = 'F';
+
+        // Âge du capitaine (nombre entier de type int)
+        int ageCapitaine = 45;
+
+        // Nombre de missions complétées (nombre entier de type short)
+        short missionsCompletees = 256;
+
+        // Nombre de membres d'équipage (nombre entier de type byte)
+        byte membresEquipage = 100;
+
+        // Distance parcourue par le vaisseau en années-lumière (nombre entier de type long)
+        long distanceParcourue = 123456789012345L;
+
+        // Température du vaisseau (nombre flottant de type float)
+        float temperatureVaisseau = 27.4f;
+
+        // Température du vide spatial (nombre flottant de type double)
+        double temperatureVideSpatial = 0.00000000000000000000000000000000000000001;
+
+        // Affichage des informations du capitaine
+        System.out.println("Hello, World!");
+        System.out.println("Capitaine présent : " + capitainePresent);
+        System.out.println("Genre du capitaine : " + genreCapitaine);
+        System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
+        System.out.println("Missions complétées : " + missionsCompletees);
+        System.out.println("Membres d'équipage : " + membresEquipage);
+        System.out.println("Distance parcourue : " + distanceParcourue + " années-lumière");
+        System.out.println("Température du vaisseau : " + temperatureVaisseau + "°C");
+        System.out.println("Température du vide spatial : " + temperatureVideSpatial + "°C");
+    }
+}
+```
