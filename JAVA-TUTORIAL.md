@@ -323,9 +323,9 @@ S'il existe d'autres règles, celles-ci représentent les principales à suivre,
 
 Une autre chose à prendre en compte, c'est que Java, contrairement à JavaScript ou à Python, est ce qu'on appelle un **langage à typage statique**, ce qui veut dire qu'on ne peut pas changer le type d'une variable en réassignant sa valeur comme on peut le faire en JavaScript ou Python qui sont eux des **langages à typage dynamique**.
 
-Par exemple, en Javascript, on pouvait créer une variable `ageDuCapitaine` à laquelle on donnait la valeur d'un nombre entier, et on pouvait ensuite réassigner la valeur si on voulait à celle d'un booléen ou encore d'une string (je rappelle un peu plus bas les différents types de variables, pas de panique), tandis qu'en Java, non seulement on doit préciser à l'avance le type de valeur qui sera celui de la variable et une fois cette assignation faite, on ne pourra pas changer de type de variable.
+Par exemple, en JavaScript, on peut créer une variable `ageDuCapitaine` à laquelle on donne la valeur d'un nombre entier, et on peut ensuite réassigner la valeur si on veut à celle d'un booléen ou encore d'une string (je rappelle un peu plus bas les différents types de variables, pas de panique), tandis qu'en Java, non seulement on doit préciser à l'avance le type de valeur qui sera celui de la variable et une fois cette assignation faite, on ne pourra pas changer de type de variable.
 
-Concrètement, en JavaScript, on pouvait faire ceci :
+Concrètement, en JavaScript, on peut faire ceci :
 
 ```Javascript
 let ageDuCapitaine = 45;  // Initialement un nombre
@@ -334,9 +334,9 @@ ageDuCapitaine = true;    // Maintenant un booléen
 ageDuCapitaine = "Robert"; // Maintenant une chaîne de caractères
 ```
 
-Comme vous voyez, en JavaScript, on peut déclarer notre variable comme un nombre, puis lui assigner une autre valeur numérique puis une valeur de type booléen, puis une valeur de type string, sans que ça ne cause aucun problème.
+Comme vous voyez, en JavaScript, on peut déclarer notre variable comme un nombre, puis lui assigner une autre valeur numérique, puis une valeur de type booléen, puis une valeur de type string, sans que cela ne cause aucun problème.
 
-En revanche, essayez ça en Java, et vous aurez des erreurs de compilation quand vous voudrez donner des valeurs de types différents à une variable qui a été déclarée, par exemple, comme un nombre entier :
+En revanche, essayez cela en Java, et vous aurez des erreurs de compilation quand vous voudrez donner des valeurs de types différents à une variable qui a été déclarée, par exemple, comme un nombre entier :
 
 ```Java
 int ageDuCapitaine = 45;   // Initialement un nombre
@@ -345,13 +345,13 @@ ageDuCapitaine = 27;      // Réassignation à un autre nombre
 // ageDuCapitaine = "Robert"; // Erreur de compilation
 ```
 
-On peut changer l'âge du capitaine, tant que ça reste un nombre entier. *A noter : j'ai fait l'impasse dans l'exemple ci-dessus en Java sur le fait de faire une classe publique comme c'est en principe d'usage en Java. Je voulais surtout donner un exemple illustratif théorique, plutôt que de présenter les choses comme elles le seraient en situation réelle, afin de ne pas "enterrer" ce que je veux illustrer avec la syntaxe des classes de Java qui peut être rébarbative au début. Nous verrons plus bas, en situation réelle, qu'assigner comme valeur un autre type de variable à ce que nous avions initialement établi amène à des erreurs de compilation.*
+On peut changer l'âge du capitaine, tant que cela reste un nombre entier. A noter : j'ai fait l'impasse dans l'exemple ci-dessus en Java sur le fait de faire une classe publique comme c'est en principe d'usage en Java. Je voulais surtout donner un exemple illustratif théorique, plutôt que de présenter les choses comme elles le seraient en situation réelle, afin de ne pas "enterrer" ce que je veux illustrer avec la syntaxe des classes de Java qui peut être rébarbative au début. Nous verrons plus bas, en situation réelle, qu'assigner comme valeur un autre type de variable à ce que nous avions initialement établi amène à des erreurs de compilation.
 
 Le typage dynamique et le typage statique ont chacun leurs avantages et inconvénients :
 
-- Le typage dynamique rend le fait de coder rapide, et donc de voir des projets se développer rapidement. Cependant, des erreurs peuvent vite passer sous le radar et donc rendre le débogage difficile.
+- Le typage dynamique permet de coder rapidement et de voir des projets se développer rapidement. Il offre une grande flexibilité puisque les variables peuvent changer de type à la volée. Cela facilite le prototypage et les modifications rapides du code. Cependant, cette flexibilité peut entraîner des erreurs subtiles qui ne sont détectées qu'à l'exécution, rendant le débogage plus difficile et augmentant les risques de bugs.
 
-- Le typage statique peut être très rébarbatif et et rendre le développement bien plus lent. Mais une fois le projet en place, il sera bien plus stable, facile à relire et à débuguer, vu que tout est explicité et donc les erreurs bien plus facilement repérables.
+- Le typage statique, en revanche, impose des contraintes dès la phase de compilation, ce qui peut ralentir le développement initial. Cependant, une fois le projet en place, il est généralement plus stable et plus sûr. Le typage statique permet de détecter un grand nombre d'erreurs possibles à la compilation plutôt qu'à l'exécution, rendant le code plus robuste et plus facile à maintenir. Les IDE comme VSC peuvent également offrir des fonctionnalités avancées de complétion et de vérification de code grâce à la connaissance des types, ce qui améliore la productivité à long terme.
 
 C'est un peu comme la fable du Lièvre et de la Tortue de Jean de La Fontaine : le lièvre va bien plus vite, a des performances bien plus impressionnantes que la tortue, mais il est aussi bien plus sujet à la déstabilisation et au fait de partir dans le décor. Java, lui, et comme la tortue : lent, très lent, mais il traverse la ligne d'arrivée de manière bien plus sûre, sans se perdre dans le décor.
 
@@ -359,7 +359,9 @@ Ceci étant dit, voyons maintenant, in situ, comment nous déclarons nos variabl
 
 #### 3.2.2. Les variables primitives
 
-Les types de variables primitifs sont des variables considérées comme "simples". Il s'agit des booléens, caractères uniques, chiffres et chiffres à virgule, soit les valeurs "vrai" ou "faux". Mais même là, on va vite voir que Java, en tant que langage de "niveau moyen", prend en compte des choses auxquelles on ne penserait même pas avec des langages de haut niveau, comme JavaScrit ou Python. Nous allons ici voir comment déclarer chacun de ces types de variables... et les spécificités allant avec.
+Les types de variables primitifs sont des variables considérées comme "simples". Ces variables primitives se distinguent des variables `objet` que nous verrons plus loin. La distinction se fait sur un point particulier : pour faire des opérations sur la valeur d'une variable primitive, on doit altérer sa valeur en intervenant de "l'extérieur", soit en réassignant une nouvelle valeur, soit en effectuant des opérations sur cette valeur. Les variables de type `objet`, comme nous le verrons, ont accès à des *méthodes* permettant d'effectuer des opérations sur leur valeur directement, sans "intervention depuis l'extérieur".
+
+Ces variables primitives sont les booléens, caractères uniques, chiffres et chiffres à virgule, soit les valeurs "vrai" ou "faux". Mais même là, on va vite voir que Java, en tant que langage de "niveau moyen", prend en compte des choses auxquelles on ne penserait même pas avec des langages de haut niveau, comme JavaScript ou Python. Nous allons ici voir comment déclarer chacun de ces types de variables et les spécificités allant avec.
 
 ##### 3.2.2.1. Les booléens
 
@@ -419,20 +421,18 @@ Les choses deviennent un peu plus complexes ici car nous allons parler de la fa�
 
 Un groupe de huit bits forme un **octet** (ou **byte** en anglais). Avec un octet, nous avons 2^8 (256) possibilités pour enregistrer une valeur. Ces octets sont les unités de mesure pour tout enregistrement. Lorsque nous parlons de mégaoctets, gigaoctets ou téraoctets, nous parlons de millions, milliards ou trillions d'octets respectivement.
 
-Dans les années 1990, James Gosling et ses collègues n'avaient pas les capacités de stockage que nous avons aujourd'hui, chaque octet était précieux. Pour cette raison, Java propose trois types de variables pour enregistrer des nombres entiers, en fonction de leur grandeur :
+Dans les années 1990, James Gosling et ses collègues n'avaient pas les capacités de stockage que nous avons aujourd'hui, chaque octet était précieux. Pour cette raison, Java propose plusieurs types de variables pour enregistrer des nombres entiers, en fonction de leur taille :
 
 - `int` : pour les nombres stockés sur 32 bits (4 octets), allant de -2,147,483,648 à 2,147,483,647.
-- `long` : pour les nombres stockés sur 64 bits (8 octets), allant de -9,223,372,036,854,775,808 à 9,223,372,036,854,775,807. Utilisé pour des valeurs très grandes.
+- `long` : pour les nombres stockés sur 64 bits (8 octets), allant de -9,223,372,036,854,775,808 à 9,223,372,036,854,775,807. Utilisé pour des valeurs très grandes. De plus, quand on déclare une variable de type `long`, on doit ajouter un suffixe "l" (en majuscule ou non) à la fin de la valeur numérique, afin que Java soit certain qu'on a attribué une valeur de type "long" à une variable "long" et non une valeur "int", "short" ou "byte" par erreur.
 - `short` : pour les nombres stockés sur 16 bits (2 octets), allant de -32,768 à 32,767. Utilisé pour des valeurs plus petites.
 - `byte` : pour les nombres stockés sur 8 bits (1 octet), allant de -128 à +127. Utilisé pour les très petites valeurs.
 
-Si les capacités de mémoire actuelles de nos apareils semblent rendre obsolètes les nuances entre ces trois valeurs, les choses sont enr éalité un brin plus complexe : quand on déclare une variable "long", l'ordinateur va directement "réserver" 8 octets de mémoire pour votre variable, que vous décidiez de mettre dedans une valeur immense correpondant à plus de 4 octets ou un nombre minuscule ne dépassant pas les centaines, ce qui représenterait une forme de gaspillage. Et si une ou deux pauvres variables mal assignées ne posent aps problème, à la longue, dans des scripts massifs enregistrant beaucoup de nombres ou au contraire pour les programmes disposant de peu de mémoire pour de tout petits dispositifs comme la programmation d'un lavelinge où l'espace mémoire est très limité, les choses peuvent vite devenir casse-gueule par l'effet exponentiel du gaspillage de mémoire.
+Même avec les capacités de mémoire actuelles, il est important de choisir le bon type de variable. Par exemple, déclarer une variable `long` alors qu'un `int` suffirait peut gaspiller de la mémoire. Dans des programmes complexes ou des systèmes avec des ressources limitées, cela peut poser problème. Utiliser le bon type de variable permet de mieux gérer la mémoire et d'optimiser les performances du processeur.
 
-Et si on parle de la mémoire, il ne faut pas oublier le processeur, qui lui fait tourner votre ordinateur, fait tous les calculs nécessaires pour le faire marcher et exécuter correctement les programme, qui lui va aussi apprécier que vous utilisiez les bonnes valeurs de variables, car manipulant un short (2 octets) plutôt qu'un long (8 octets, même si la valeur numérique contenue ne dépasse pas la centaine), il sera plus dacile et efficace.
+Enfin, utiliser le bon type de variable rend votre code plus clair et plus lisible.
 
-Enfin, c'est aussi une bonne chose pour vous, en écrivant votre code : utiliser le bon type de variable permet d'avoir une idée plus claire de ce que vous voulez faire et rendra votre code plus lisible et compréhensible.
-
-Reprennons notre classe HelloWorld, que nous développons. Maintenant, en plus de stocker des variables non utilisées directement, nous allons afficher d'autres messages en plus de "Hello, world!", reprenant la présence du capitaine sur le vesseau, son genre, et d'autres données numériques :
+Reprenons notre classe HelloWorld, que nous développons. Maintenant, en plus de stocker des variables non utilisées directement, nous allons afficher d'autres messages en plus de "Hello, world!", reprenant la présence du capitaine sur le vaisseau, son genre, et d'autres données numériques :
 
 ```Java
 public class HelloWorld {
@@ -471,7 +471,7 @@ D'ailleurs compilez et exécutez le code et voyez ce que ça donne en console :
 
 ![Script non compilé en UTF8](images/partie3/JavacSansUTF8.png)
 
-Et là, vous remarquerez une chsoe, les accents ne apssent pas ! Ce n'est pas un si gros soucis que ça. En fait, dans sa compilation en fichier Bytecode, JDK a oublié de prendre en compte l'UTF-8, qui est en quelque sorte une norme d'encodage des caractères qui supporte les accents et peut les afficher une fois un code exécuté. Pour que les chsoes se passent comme voulue, rien de plus simple.
+Et là, vous remarquerez une chose, les accents ne passent pas ! Ce n'est pas un si gros soucis que ça. En fait, dans sa compilation en fichier Bytecode, JDK a oublié de prendre en compte l'UTF-8, qui est en quelque sorte une norme d'encodage des caractères qui supporte les accents et peut les afficher une fois un code exécuté. Pour que les chsoes se passent comme voulue, rien de plus simple.
 
 D'abord, on s'assure que le fichier HelloWrld.java est bien encodé en UTF-8, en regardant dans le coin en bas à droite de VSCode :
 
@@ -490,17 +490,19 @@ Ceci est un petit excursus en plus, mais qui nous permet de nous familiariser en
 ##### 3.2.2.4. Les nombres à virgule, dits "flotants"
 
 Les nombres flotants sont ce qu'on appelle les nombres à virgules, qui ne sont pas des entiers, et qu'on peut aussié crire sous forme de fractions. Par exemple, 3,5 peut s'écrire 7/2.
+
 Les nombres flottants sont des nombres à virgule, c'est-à-dire des nombres non entiers, qui peuvent également être écrits sous forme de fractions. Par exemple, 3,5 peut s'écrire 7/2.
 
 En Java, les nombres flottants sont représentés par deux types de variables spécifiques : float et double.
 
-- Les `float` sont des nombres à virgule flottante qui tiennent sur 32 bits (4 octets). Ils peuvent représenter des valeurs avec environ 7 chiffres significatifs. Il est important de noter que bien qu'un float puisse théoriquement représenter des valeurs entières de grande taille, son utilisation principale est pour les nombres à virgule flottante avec une précision limitée.
-- Les `double`, quant à eux, occupent 64 bits (8 octets) et peuvent représenter des valeurs avec environ 15 chiffres significatifs. Cela permet une plus grande précision et une plage de valeurs plus large.
+- Les `float` sont des nombres à virgule flottante qui tiennent sur 32 bits (4 octets). Ils peuvent représenter des valeurs avec environ 7 chiffres significatifs. Il est important de noter que bien qu'un float puisse théoriquement représenter des valeurs entières de grande taille, son utilisation principale est pour les nombres à virgule flottante avec une précision limitée. De plus, quand on déclare une variable de type `float`, on doit ajouter un suffixe "f" (en majuscule ou non) à la fin de la valeur numérique, afin que Java soit certain qu'on a ttribué une valeur de "float" à une variable de type "float" et non une valeur "double".
+- Les `double`, quant à eux, occupent 64 bits (8 octets) et peuvent représenter des valeurs avec environ 15 chiffres significatifs. Cela permet une plus grande précision et une plage de valeurs plus large. Si ce n'est pas obligatoire, il peut être recommandé d'ajouter un suffixe "d" (peut être écrit en majuscule) à la valeur attribuée à une variable `double` afin que Java ait la confirmation qu'on travaille bien sur une variable "double" et non "float".
+
 Par exemple : la température actuelle, mettons 27,4°C, s'encode comme suit :
 
 ```Java
 float températureVaisseau = 27.4f;
-``` 
+```
 
 Et pour les double, pas besoin d'ajouter ce "f" :
 
@@ -550,3 +552,287 @@ public class HelloWorld {
     }
 }
 ```
+
+##### 3.2.2.5. Variables déclarées sans valeur assignée
+
+Nous avons vu jusque maintenant, avec les variables primitives, qu'en Java, quand on déclare une variable, on doit d'abord préciser son type. Cependant, ce n'est pas parce qu'on déclare une variable qu'on doit forcément lui attribuer une valeur. Une variable peut très bien être déclarée, mais non initialisée. En d'autres termes, on peut dire qu'on va créer une variable, lui assigner un type, lui donner le nom, mais lui donner aucune valeur.
+
+Dans notre exemple, ce sera, mettons, le nombre de thermo-conteneurs dans notre vaisseau spatial, qu'on va ajouter dans notre classe "HelloWorld" sans l'initialiser :
+
+```Java
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Présence du capitaine
+        boolean capitainePresent = true;
+        
+        // Genre du capitaine
+        char genreCapitaine = 'F';
+
+        // Âge du capitaine (nombre entier de type int)
+        int ageCapitaine = 45;
+
+        // Nombre de missions complétées (nombre entier de type short)
+        short missionsCompletees = 256;
+
+        // Nombre de membres d'équipage (nombre entier de type byte)
+        byte membresEquipage = 100;
+
+        // Distance parcourue par le vaisseau en années-lumière (nombre entier de type long)
+        long distanceParcourue = 123456789012345L;
+
+        // Température du vaisseau (nombre flottant de type float)
+        float temperatureVaisseau = 27.4f;
+
+        // Température du vide spatial (nombre flottant de type double)
+        double temperatureVideSpatial = 0.00000000000000000000000000000000000000001d;
+
+        // Le nombre de thermo-conteneurs dans le vaisseau (variable de type int non initialisée)
+        int nombreThermoConteneurs;
+
+
+        // Affichage des informations du capitaine
+        System.out.println("Hello, World!");
+        System.out.println("Capitaine présent : " + capitainePresent);
+        System.out.println("Genre du capitaine : " + genreCapitaine);
+        System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
+        System.out.println("Missions complétées : " + missionsCompletees);
+        System.out.println("Membres d'équipage : " + membresEquipage);
+        System.out.println("Distance parcourue : " + distanceParcourue + " années-lumière");
+        System.out.println("Température du vaisseau : " + temperatureVaisseau + "°C");
+        System.out.println("Température du vide spatial : " + temperatureVideSpatial + "°C");
+    }
+}
+```
+
+Ainsi, notre vaisseau spatial a déjà une variable pour le nombre de conteneurs qu'il va transporter, mais sans qu'on doive en déterminer la quantité. Pour y attribuer une valeur, on peut faire ça après coup. Voilà comment s'écrit cette attribution de valeur dans notre exemple :
+
+```Java
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Présence du capitaine
+        boolean capitainePresent = true;
+        
+        // Genre du capitaine
+        char genreCapitaine = 'F';
+
+        // Âge du capitaine (nombre entier de type int)
+        int ageCapitaine = 45;
+
+        // Nombre de missions complétées (nombre entier de type short)
+        short missionsCompletees = 256;
+
+        // Nombre de membres d'équipage (nombre entier de type byte)
+        byte membresEquipage = 100;
+
+        // Distance parcourue par le vaisseau en années-lumière (nombre entier de type long)
+        long distanceParcourue = 123456789012345L;
+
+        // Température du vaisseau (nombre flottant de type float)
+        float temperatureVaisseau = 27.4f;
+
+        // Température du vide spatial (nombre flottant de type double)
+        double temperatureVideSpatial = 0.00000000000000000000000000000000000000001d;
+
+        // Nombre de thermo-conteneurs dans le vaisseau (variable de type int non initialisée)
+        int nombreThermoConteneurs;
+
+        // Attribution d'une valeur à la variable nombreThermoConteneurs
+        nombreThermoCOnteneurs = 500;
+
+
+        // Affichage des informations du capitaine
+        System.out.println("Hello, World!");
+        System.out.println("Capitaine présent : " + capitainePresent);
+        System.out.println("Genre du capitaine : " + genreCapitaine);
+        System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
+        System.out.println("Missions complétées : " + missionsCompletees);
+        System.out.println("Membres d'équipage : " + membresEquipage);
+        System.out.println("Distance parcourue : " + distanceParcourue + " années-lumière");
+        System.out.println("Température du vaisseau : " + temperatureVaisseau + "°C");
+        System.out.println("Température du vide spatial : " + temperatureVideSpatial + "°C");
+    }
+}
+```
+
+##### 3.2.2.6. Var, un typage pseudo-dynamique et flexible
+
+Et nouveauté depuis Java 10, disponible depuis 2018, Java peut typer certaines donner de manière dynamique, comme en JavaScript, quand on utilise var ! Par exemple :
+
+```javascript
+var canonsVaisseau = 50;
+```
+
+Donnera en Java :
+
+```Java
+var canonsVaisseau = 50;
+```
+
+Et ce qui est intéressant avec `var`, c'est que vous auriez pu mettre *true* ou *false* pour déterminer si notre vaisseau est strictement civil ou militaire :
+
+```Java
+var canonsVaisseau = true;
+```
+
+Maintenant notez que, une fois que Java aura compilé la valeur assignée à la volée à une `var`, vous ne pourrez plus changer le type de variable à la volée comme sur JavaScript !
+
+Et autre point, en Java, une variable `var` ne peut pas être non-initalisée, comme c'est le cas pour les variables "classiques" dont on précise le type.
+
+l'utilisation de ``var` peut être utile et faire gagner du temps pour déclarer des variables dont on peut facilement deviner par le nom le type. Par exemple :
+
+```Java
+float temperatureVaisseau = 27.4f;
+```
+
+Peut très bien s'écrire :
+
+```Java
+var temperatureVaisseau = 27.4f;
+```
+
+Et on verra plus tard, que pour certaines variables, de type objet, que de déclarer nos variables sous forme `var` peut représenter un sacré gain de temps.
+
+##### 3.2.2.7. String, une première approche
+
+Un dernier mot sur notre section consacrée aux variables primitives pour en aborder une qui n'est pas primitive, mais de type **objet**, j'ai nommé la `variable String` ! Dans la mesure où les String sont très souvents utilisés, et qu'ils le sont abondaments dans les exemples de ce tuto, je me dois de leur consacrer ici quelques lignes, même s'ils ne sont aps primitifs. Le but ici est de voir leur usage le plus basique.
+
+Les `String` se déclarent comme des variables classiques; et lors du typage de variable, vouss devez écrire **String** avec un "S" majuscule. Cette majuscule, apr ailleurs, est ce qui eprmet de distinguer les variables primitives des variables objet. De plus, leur contenu se met des des double-guillemets, `"comme ceci"`, et non dans des guillemets simples comme avec les `char`.
+
+Pour les habitués de JS, ce que vous êtes rpobablement, vous remarquerez qu'en Java, les guillemets simples ou doubles ne sont aps utilisés de manière indistincte, mais ont des usages précis en fonction de la situation : les simples pour les `char`, les doubles pour les `String`.
+
+Voici un exemple de `String` ajoutée à notre classe HelloWorld :
+
+```Java
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Présence du capitaine
+        boolean capitainePresent = true;
+        
+        // Genre du capitaine
+        char genreCapitaine = 'F';
+
+        // Âge du capitaine (nombre entier de type int)
+        int ageCapitaine = 45;
+
+        // Nombre de missions complétées (nombre entier de type short)
+        short missionsCompletees = 256;
+
+        // Nombre de membres d'équipage (nombre entier de type byte)
+        byte membresEquipage = 100;
+
+        // Distance parcourue par le vaisseau en années-lumière (nombre entier de type long)
+        long distanceParcourue = 123456789012345L;
+
+        // Température du vaisseau (nombre flottant de type float)
+        float temperatureVaisseau = 27.4f;
+
+        // Température du vide spatial (nombre flottant de type double)
+        double temperatureVideSpatial = 0.00000000000000000000000000000000000000001d;
+
+        // Nombre de thermo-conteneurs dans le vaisseau (variable de type int non initialisée)
+        int nombreThermoConteneurs;
+
+        // Attribution d'une valeur à la variable nombreThermoConteneurs
+        nombreThermoConteneurs = 500;
+
+        // Variable "var" pour déclarer le nombre de canons :
+        var nombreCanons = 50;
+
+        // Nom du vaisseau (chaîne de caractères)
+        String nomVaisseau = "L'Anzu Céleste"
+
+
+        // Affichage des informations du capitaine
+        System.out.println("Hello, World!");
+        System.out.println("Capitaine présent : " + capitainePresent);
+        System.out.println("Genre du capitaine : " + genreCapitaine);
+        System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
+        System.out.println("Missions complétées : " + missionsCompletees);
+        System.out.println("Membres d'équipage : " + membresEquipage);
+        System.out.println("Distance parcourue : " + distanceParcourue + " années-lumière");
+        System.out.println("Température du vaisseau : " + temperatureVaisseau + "°C");
+        System.out.println("Température du vide spatial : " + temperatureVideSpatial + "°C");
+        System.out.println("Nombre de thermo-conteneurs sur le vaisseau : " + nombreThermoConteneurs);
+        System.out.println("Nombre de canons sur le vaisseau : " + nombreCanons);
+        System.out.println("Nom du vaisseau : " + nomVaisseau);
+    }
+}
+```
+
+Et comme en JavaScript, il y a moyen d'ajouter un signe d'échappement pour pouvoir inclure des double-guillemets dans une String, ce qui peut être particulièrement utile pour des citations ou pour faire parler des personnages. Cela permet de créer des dialogues ou des expressions plus riches et réalistes.
+
+Prenons par exemple la devise de notre vaisseau spatial poétiquement nommé "L'Anzu Céleste", inspirée de la mythologie babylonienne. Nous voulons inclure des double-guillemets autour de la devise pour lui donner une importance particulière. Voici comment nous pouvons le faire en Java :
+
+```Java
+String deviseVaisseau = "\"Guidés par Shamash\"";
+```
+
+Et voilà ce que ça donne dans notre classe HelloWorld :
+
+```Java
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Présence du capitaine
+        boolean capitainePresent = true;
+        
+        // Genre du capitaine
+        char genreCapitaine = 'F';
+
+        // Âge du capitaine (nombre entier de type int)
+        int ageCapitaine = 45;
+
+        // Nombre de missions complétées (nombre entier de type short)
+        short missionsCompletees = 256;
+
+        // Nombre de membres d'équipage (nombre entier de type byte)
+        byte membresEquipage = 100;
+
+        // Distance parcourue par le vaisseau en années-lumière (nombre entier de type long)
+        long distanceParcourue = 123456789012345L;
+
+        // Température du vaisseau (nombre flottant de type float)
+        float temperatureVaisseau = 27.4f;
+
+        // Température du vide spatial (nombre flottant de type double)
+        double temperatureVideSpatial = 0.00000000000000000000000000000000000000001d;
+
+        // Nombre de thermo-conteneurs dans le vaisseau (variable de type int non initialisée)
+        int nombreThermoConteneurs;
+
+        // Attribution d'une valeur à la variable nombreThermoConteneurs
+        nombreThermoConteneurs = 500;
+
+        // Variable "var" pour déclarer le nombre de canons
+        var nombreCanons = 50;
+
+        // Nom du vaisseau (chaîne de caractères)
+        String nomVaisseau = "L'Anzu Céleste";
+
+        // Devise du vaisseau avec des double-guillemets
+        String deviseVaisseau = "\"Guidés par Shamash\"";
+
+        // Affichage des informations du capitaine
+        System.out.println("Hello, World!");
+        System.out.println("Capitaine présent : " + capitainePresent);
+        System.out.println("Genre du capitaine : " + genreCapitaine);
+        System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
+        System.out.println("Missions complétées : " + missionsCompletees);
+        System.out.println("Membres d'équipage : " + membresEquipage);
+        System.out.println("Distance parcourue : " + distanceParcourue + " années-lumière");
+        System.out.println("Température du vaisseau : " + temperatureVaisseau + "°C");
+        System.out.println("Température du vide spatial : " + temperatureVideSpatial + "°C");
+        System.out.println("Nombre de thermo-conteneurs sur le vaisseau : " + nombreThermoConteneurs);
+        System.out.println("Nombre de canons sur le vaisseau : " + nombreCanons);
+        System.out.println("Nom du vaisseau : " + nomVaisseau);
+        System.out.println("Devise du vaisseau : " + deviseVaisseau);
+    }
+}
+```
+
+##### 3.2.2.8. Exercice de synthèse
+
+Dans le fichier "JAVA-EXERCISES.md", vous allez trouver l'énnoncé d'un exercice, et dans MardukVOlant.java, un code.
+
+Votre but, en tant qu'officier de bord assigné à la bonne intégrité du carnet de bord, va être de réassigner les valeurs correctement, car votre prédécesseur a fait n'importe quoi : il y a des fautes dans els noms de types de variables, des valeurs de variables qui ne correspondent aps ayx types, des noms de variables qui ne correspondent pas entre la déclaration de la variable et son affichage, ... un vrai bourbier ! Votre mission est de corriger tout ça !
+
+Rendez-vous donc sur "JAVA-EXERCISES.md" pour en savoir plus, et "MardukVolant.java" pour corriger tout ça ! La solution, pour sa part, sera sur "JAVA-SOLUTIONS.md" !
