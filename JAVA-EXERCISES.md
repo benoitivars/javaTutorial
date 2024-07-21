@@ -8,7 +8,7 @@
 
 **Contexte :** Vous travaillez sur un vaisseau secondaire nommé "Le Marduk Volant". Malheureusement, le code actuel comporte plusieurs erreurs de typage et des fautes d'orthographe. Votre tâche est de corriger ces erreurs pour que le programme compile et fonctionne correctement.
 
-**Instructions :** 
+**Instructions :**
 
 1. Copiez le code ci-dessous dans votre IDE Java., ou ouvrez le fichier MardukVOlant.Java.
 2. Identifiez et corrigez les erreurs de typage et de réassignation.

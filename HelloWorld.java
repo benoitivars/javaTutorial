@@ -24,6 +24,21 @@ public class HelloWorld {
         // Température du vide spatial (nombre flottant de type double)
         double temperatureVideSpatial = 0.00000000000000000000000000000000000000001d;
 
+        // Nombre de thermo-conteneurs dans le vaisseau (variable de type int non initialisée)
+        int nombreThermoConteneurs;
+
+        // Attribution d'une valeur à la variable nombreThermoConteneurs
+        nombreThermoConteneurs = 500;
+
+        // Variable "var" pour déclarer le nombre de canons
+        var nombreCanons = 50;
+
+        // Nom du vaisseau (chaîne de caractères)
+        String nomVaisseau = "L'Anzu Céleste";
+
+        // Devise du vaisseau avec des double-guillemets
+        String deviseVaisseau = "\"Guidés par Shamash\"";
+
         // Affichage des informations du capitaine
         System.out.println("Hello, World!");
         System.out.println("Capitaine présent : " + capitainePresent);
@@ -34,5 +49,9 @@ public class HelloWorld {
         System.out.println("Distance parcourue : " + distanceParcourue + " années-lumière");
         System.out.println("Température du vaisseau : " + temperatureVaisseau + "°C");
         System.out.println("Température du vide spatial : " + temperatureVideSpatial + "°C");
+        System.out.println("Nombre de thermo-conteneurs sur le vaisseau : " + nombreThermoConteneurs);
+        System.out.println("Nombre de canons sur le vaisseau : " + nombreCanons);
+        System.out.println("Nom du vaisseau : " + nomVaisseau);
+        System.out.println("Devise du vaisseau : " + deviseVaisseau);
     }
 }
