@@ -834,7 +834,7 @@ public class  leloWorld {
 
 Dans le fichier "JAVA-EXERCISES.md", vous allez trouver l'énnoncé d'un exercice, et dans MardukVOlant.java, un code.
 
-Votre but, en tant qu'officier de bord assigné à la bonne intégrité du carnet de bord, va être de réassigner les valeurs correctement, car votre prédécesseur a fait n'importe quoi : il y a des fautes dans les noms de types de variables, des valeurs de variables qui ne correspondent aps ayx types, des noms de variables qui ne correspondent pas entre la déclaration de la variable et son affichage, ... un vrai bourbier ! Votre mission est de corriger tout ça !
+Votre but, en tant qu'officier de bord assigné à la bonne intégrité du carnet de bord, va être de réassigner les valeurs correctement, car votre prédécesseur a fait n'importe quoi : il y a des fautes dans les noms de types de variables, des valeurs de variables qui ne correspondent pas aux types, des noms de variables qui ne correspondent pas entre la déclaration de la variable et son affichage, ... un vrai bourbier ! Votre mission est de corriger tout ça !
 
 Rendez-vous donc sur "JAVA-EXERCISES.md" pour en savoir plus, et "MardukVolant.java" pour corriger tout ça ! La solution, pour sa part, sera sur "JAVA-SOLUTIONS.md" !
 
@@ -1021,11 +1021,11 @@ Voici les opérateurs relationnels :
 
 - **Différent de** : il s'écrit avec le symbole `!=`, pour vérifier si le membre de gauche n'est pas égal à celui de droite. Exemple `boolean comparaisonValeur6 = 30 != 20;` qui retourne `true`.
 
-Pour voir en pratique ces comparateurs, compilez et exécutez le fichier `ComparateursRelationnels.java` pour comprendre ce qu'on a présenté ici.
+Pour voir en pratique ces opérateurs, compilez et exécutez le fichier `ComparateursRelationnels.java` pour comprendre ce qu'on a présenté ici.
 
-### 4.3. Les comparateurs logiques
+### 4.3. Les opérateurs logiques
 
-Ces comparateurs sont un peu particuliers, car à la base de tout, ce sont eux qui font fonctionner un ordinateur. Rappelez-vous, quand je vous ai introduits à la notion de bits, en vous disant qu'ils peuvent avoir une valeur de 0 ou 1, booléenne, et que ce sont eux qui structurent un programme. Nous sommes en plein dedans. Et c'est l'association de ces données booléennes qui donne vie à nos programmes et nos ordinateurs, des cascades de "oui" et de "non".
+Ces opérateurs sont un peu particuliers, car à la base de tout, ce sont eux qui font fonctionner un ordinateur. Rappelez-vous, quand je vous ai introduits à la notion de bits, en vous disant qu'ils peuvent avoir une valeur de 0 ou 1, booléenne, et que ce sont eux qui structurent un programme. Nous sommes en plein dedans. Et c'est l'association de ces données booléennes qui donne vie à nos programmes et nos ordinateurs, des cascades de "oui" et de "non".
 
 Un ordinateur ne fonctionne pas un critère après l'autre. En réalité, il prend en compte plusieurs conditions en même temps.
 
