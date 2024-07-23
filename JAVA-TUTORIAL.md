@@ -1,4 +1,4 @@
-# TUTOR le Java
+# TUTO JAVA
 
 Bienvenue dans ce tutor le Java ! Dans la longue liste des langages de programmation, nous allons explorer ici Java, un langage polyvalent et très demandé sur le marché du travail.
 
@@ -473,7 +473,7 @@ D'ailleurs compilez et exécutez le code et voyez ce que ça donne en console :
 
 Et là, vous remarquerez une chose, les accents ne passent pas ! Ce n'est pas un si gros soucis que ça. En fait, dans sa compilation en fichier Bytecode, JDK a oublié de prendre en compte l'UTF-8, qui est en q leque sorte une norme d'encodage des caractères qui supporte les accents et peut les afficher une fois un code exécuté. Pour que les chsoes se passent comme voulue, rien de plus simple.
 
-D'abord, on s'assure que le fichier  leloWrld.java est bien encodé en UTF-8, en regardant dans le coin en bas à droite de VSCode :
+D'abord, on s'assure que le fichier  HelloWrld.java est bien encodé en UTF-8, en regardant dans le coin en bas à droite de VSCode :
 
 ![Vérification de l'encodage UTF8](images/partie3/VerifUTF8.png)
 
@@ -1052,7 +1052,7 @@ Avec ces quatre éléments, on peut vérifier ce qu'on appelle la validité d'ex
 - Le comparateur **"et"** a pour condition que tous les booléens considérés soient vrais.
 - Le **"non"**, pour sa part, se met devant un booléen pour inverser sa valeur, ce qui doit alors être pris en compte pour évaluer si l'expression considérée est vraie ou non.
 
-### 4.3.5. Les opérateurs logiques en Java
+#### 4.3.5. Les opérateurs logiques en Java
 
 - **ET logique (`&`)** : Retourne `true` si et seulement si toutes les conditions sont vraies.
 - **OU logique (`|`)** : Retourne `true` si au moins une des conditions est vraie.
@@ -1063,6 +1063,252 @@ Avec ces quatre éléments, on peut vérifier ce qu'on appelle la validité d'ex
 
 *A noter* : tout comme pour les opérateurs arithmétiques, l'utilisation de parenthèses pour les opérateurs logiques aide à bien organiser son code et la résolution de ses propositions.
 
-### 4.3.6. Exemple de code
+#### 4.3.6. Exemple de code
 
 Pour voir tout ça en pratique, compilez et exécutez le programme `ComparateursLogiques.java`.
+
+### 4.4. Les opérateurs d'incrémentation
+
+Nous allons voir maintenant quelque chose qui revient aussi dans beaucoup de langages de programmation, soit **l'incrémentation**, le fait d'augmenter ou de diminuer l'une unité la valeur numérique d'un entier sans lui assigner de nouvelle valeur numérique en tant que telle.
+
+Voyons voir comment l'incrémentation fonctionne avec *l'addition*
+
+#### 4.4.1. L'incrémentation par addition
+
+Si vous avez par exemple :
+
+```Java
+int suiteNumerique = 5;
+```
+
+Vous pouviez déjà augmenter sa valeur de 1 comme suit :
+
+```Java
+int suiteNumerique = 5;
+suiteNumerique = suiteNumerique+1;
+```
+
+Or, l'incrémentation propose une autre syntaxe :
+
+```Java
+int suiteNumerique = 5;
+suiteNumerique++;
+```
+
+Et si vous faites :
+
+```Java
+int suiteNumerique = 5;
+suiteNumerique++;
+suiteNumerique++;
+suiteNumerique++;
+suiteNumerique++;
+suiteNumerique++;
+```
+
+suiteNumérique vaudra 10 à la fin des opérations, car il aura été incrémenté cinq fois.
+
+#### 4.4.2. L'incrémentation par soustraction
+
+L'incrémentation fonctionne aussi pour la sousstraction, avec la même idée, à chaque fois retirer une valeur.
+
+Les règles syntaxiques sont identiques à celle de l'incrémentaiton pour l'addition. Ainsi, si vous faites :
+
+```Java
+int suiteNumerique = 5;
+suiteNumerique--;
+suiteNumerique--;
+suiteNumerique--;
+suiteNumerique--;
+suiteNumerique--;
+```
+
+suiteNumerique atteindra la valeur de 0.
+
+#### 4.4.3. Particularités syntaxiques : la pré-incrémentation et la post-incrémentation
+
+J'aborde un point un peu complexe qui peut ne pas être facile à comprendre au début. Cela nécessitera un peu de concentration, mais en appliquant ce que nous avons vu jusqu'à présent, vous devriez y arriver.
+
+Nous avons vu plus haut que l'incrémentation s'écrit en plaçant les symboles ++ ou -- à droite du nom de la variable (c'est la **post-incrémentation**). En réalité, ils peuvent aussi se placer à gauche (c'est la **pré-incrémentation**) :
+
+```Java
+int suiteNumerique = 5;
+++suiteNumerique;
+```
+
+Bien que le résultat final puisse être le même, le processus diffère *légèrement*.
+
+Rappellez-vous : Java, en l'absence de parenthèses, résout les opérations de gauche à droite. Or l'incrémentation se fait qu'à partir du moment où Java rencontre les symboles dédoublés `++` ou `--` !
+
+Ainsi avec :
+
+```Java
+int suiteNumerique = 5;
+int nouveauNombre = ++suiteNumerique;
+```
+
+L'incrémentation de la valeur de suiteNumerique se fera **avant** que Java ne voie que la valeur assignée à `nouveauNombre` est celle de suiteNumerique.  Donc Java va "scanner" nouveauNombre = (1 + suiteNumerique), en prenant directement en compte l'incrémentation. On appelle ça la **pré-incrémentation**.
+
+Donc dans cet exemple, `nouveauNombre` vaudra 6, et `suiteNumerique` vaudra aussi 6.
+
+Maintenant, dans le cas inverse :
+
+```Java
+int suiteNumerique = 5;
+int nouveauNombre = suiteNumerique--;
+```
+
+L'incrémentation de la valeur de `suiteNumerique` se fera après que Java ait assigné la valeur à nouveauNombre. Ainsi, Java va évaluer `nouveauNombre = suiteNumerique`, puis incrémenter `suiteNumerique`. C'est ce qu'on appelle la **post-incrémentation**.
+
+Donc dans cet exemple, `nouveauNombre` vaudra 5, et `suiteNumerique` vaudra 6.
+
+Essayez d'exécuter ce code pour mieux comprendre :
+
+```Java
+public class IncrementationExample {
+    public static void main(String[] args) {
+        int suiteNumerique = 5;
+        int nouveauNombre = suiteNumerique++;
+
+        System.out.println("Valeur de nouveauNombre : " + nouveauNombre); // Affichera 5
+        System.out.println("Valeur de suiteNumerique : " + suiteNumerique); // Affichera 6
+    }
+}
+```
+
+Si vous lancez le code dans Git Bash, voilà ce que vous verrez :
+
+![Exemples d'incrémentations](images/partie4/IncrementationExample.png)
+
+Et si vous lancez ce code :
+
+```Java
+public class IncrementationExample2 {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 10;
+        int result = x++ + ++y;
+        
+        System.out.println("x = " + x); // x = 6
+        System.out.println("y = " + y); // y = 11
+        System.out.println("result = " + result); // result = 5 + 11 = 16
+    }
+}
+```
+
+Vous verrez que le résultat sera 16 et non 17, car Java n'aura pas immédiatement pris en compte l'incrémentation de `x`, en raison de la **post-incrémentation** :
+
+![Exemple plus développé sur les incrémentations](images/partie4/IncrementationExample2.png)
+
+C'est un point théorique assez spécifique qui demande du temps pour être bien compris, mais il vous sera très utile par la suite.
+
+### 4.5. Les opérateurs de concaténation
+
+Nous voici arrivés au dernier opérateur, celui de concaténation, c'est à dire le fait **d'associer des chaînes de caractères**, soit différentes `String`. On ne va aps passer beaucoup de tmeps dessus, car en réalité, nous l'avons déjà beaucoup pratiqué dans les très  nombreux exemples que je vous ai donné depuis le début de ce tuto !
+
+Pour vous expliquer ce qu'il y a à comprendre, je vais reprendre la classe HelloWorld, qui reprend les caractéristiques de notre vaisseau, l'Anzu Céleste :
+
+```Java
+public class HelloWorld {
+    public static void main(String[] args) {
+        // Présence du capitaine
+        boolean capitainePresent = true;
+        
+        // Genre du capitaine
+        char genreCapitaine = 'F';
+
+        // Âge du capitaine (nombre entier de type int)
+        int ageCapitaine = 45;
+
+        // Nombre de missions complétées (nombre entier de type short)
+        short missionsCompletees = 256;
+
+        // Nombre de membres d'équipage (nombre entier de type byte)
+        byte membresEquipage = 100;
+
+        // Distance parcourue par le vaisseau en années-lumière (nombre entier de type long)
+        long distanceParcourue = 123456789012345L;
+
+        // Température du vaisseau (nombre flottant de type float)
+        float temperatureVaisseau = 27.4f;
+
+        // Température du vide spatial (nombre flottant de type double)
+        double temperatureVideSpatial = 0.00000000000000000000000000000000000000001d;
+
+        // Nombre de thermo-conteneurs dans le vaisseau (variable de type int non initialisée)
+        int nombreThermoConteneurs;
+
+        // Attribution d'une valeur à la variable nombreThermoConteneurs
+        nombreThermoConteneurs = 500;
+
+        // Variable "var" pour déclarer le nombre de canons
+        var nombreCanons = 50;
+
+        // Nom du vaisseau (chaîne de caractères)
+        String nomVaisseau = "L'Anzu Céleste";
+
+        // Devise du vaisseau avec des double-guillemets
+        String deviseVaisseau = "\"Guidés par Shamash\"";
+
+        // Affichage des informations du capitaine
+        System.out.println("Hello, World!");
+        System.out.println("Capitaine présent : " + capitainePresent);
+        System.out.println("Genre du capitaine : " + genreCapitaine);
+        System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
+        System.out.println("Missions complétées : " + missionsCompletees);
+        System.out.println("Membres d'équipage : " + membresEquipage);
+        System.out.println("Distance parcourue : " + distanceParcourue + " années-lumière");
+        System.out.println("Température du vaisseau : " + temperatureVaisseau + "°C");
+        System.out.println("Température du vide spatial : " + temperatureVideSpatial + "°C");
+        System.out.println("Nombre de thermo-conteneurs sur le vaisseau : " + nombreThermoConteneurs);
+        System.out.println("Nombre de canons sur le vaisseau : " + nombreCanons);
+        System.out.println("Nom du vaisseau : " + nomVaisseau);
+        System.out.println("Devise du vaisseau : " + deviseVaisseau);
+    }
+}
+```
+
+En se servant de cet exemple, nous allons voir la **concaténation** et l'enregistrement d'une `String` sous forme de **variable**.
+
+#### 4.5.1. La concaténation
+
+C'est le fait d'associer plusieurs `String` entre elles. Si vous regardez par exemple le `Ststem.out.println` associé à la distance parcourure, vous remarquerez que le symbole "+" permet d'associer différentes `String` et me^me de glisser entre elles les valeurs de variables d'autres types.
+
+#### 4.5.2. Les String sous forme de variable
+
+Si vous regardez les deux derniers `System.out.println`, vous remarquerez que la `String` associée à l'affichage est dans les deux cas associée à une variable qui a **une valeur String**. La concaténation peut donc se faire aussi entre variables de *type String*.
+
+#### 4.5.3. Attention à la conversion globale
+
+Si, lors de concaténations vous décidez de faire  `String` + `int` + `int`, il faut savoir que ce qui sera alors affiché sera considéré dans son ensemble comme une `String`.
+
+Or, sous format `String`, si vous additionnez apr exemple 5 et 3, vous n'aurez plus 7, mais la concaténation de deux carctères numériques, donc 53, comme vous pouvez le voir dans cet exemple :
+
+´´´Java
+public class ConcatenerNombres {
+    public static void main(String[] args) {
+        int nombre1 = 5;
+        int nombre2 = 3;
+
+        // Conversion des entiers en chaînes de caractères et concaténation
+        String resultat = String.valueOf(nombre1) + String.valueOf(nombre2);
+
+        // Affichage du résultat
+        System.out.println("La concaténation de " + nombre1 + " et " + nombre2 + " est : " + resultat);
+
+        // Pour comparaison, l'addition normale des entiers
+        int somme = nombre1 + nombre2;
+        System.out.println("L'addition de " + nombre1 + " et " + nombre2 + " est : " + somme);
+    }
+}
+´´´
+
+Si vous regardez bien l'exécutions, vous vous rendrez compte que des variables qui étaient de base des `int` sont ici traitées comme des composantes d'une `String`, et que la somme des deux ne fait qu'associer deux `String` composées chacune d'un seul caractère.
+
+![Exécution du fichier ConcatenerNombres](images/partie4/ConcatenerNombres.png)
+
+Donc si vous devez afficher dans une `String` la somme entre deux valeurs numériques issues de deux variables différentes, soit passez apr une variable intermédiaire, soit par des parenthèses dans votre `System.out.println` qui vont gérer, priorité des opérations oblige, cette somme, avant d'en concaténer le résultat à votre `String` !
+
+### 4.6. Conclusion sur les opérateurs
+
+Nous voici donc arrivés à la fin de la liste des opérateurs les plus fréquents en Java. Grâce à ceux-ci, nous aovns déjà le potentiel pour faire de nombreuses. La prochaine opération consistera à voir els boucles, les conditionnelles et les opérateurs ternaires qui vous permettront d'associer tout ce que nous avons vu pour en finalité faire des premiers programmes !
