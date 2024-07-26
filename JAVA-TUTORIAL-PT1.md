@@ -1,4 +1,4 @@
-# TUTO JAVA
+# TUTO JAVA - PARTIE 1
 
 Bienvenue dans ce tutor le Java ! Dans la longue liste des langages de programmation, nous allons explorer ici Java, un langage polyvalent et très demandé sur le marché du travail.
 
@@ -18,11 +18,11 @@ PHP est au back-end web ce que Booba est au rap français, l'empereur assis sur 
 
 #### 1.1.2. Java
 
-Maintenant que je pense avoir été honnête vis-à-vis de PHP, voyons pourquoi,  leon moi, apprendre Java et son framework Spring est beaucoup plus intéressant... et amusant.
+Maintenant que je pense avoir été honnête vis-à-vis de PHP, voyons pourquoi,  selon moi, apprendre Java et son framework Spring est beaucoup plus intéressant... et amusant.
 
-D'abord, Java ne se limite pas au web. Si vous apprenez Java, vous pouvez en réalité vous diversifier : web, applications Android, applications de bureau, etc. Bien entendu, on pourrait rétorquer que, par exemple, Node.js peut aussi permettre de dé leopper des applications de bureau. Mais soyons honnêtes, Node.js n'est pas, de base, calibré pour dé leopper des applications "lourdes", là où Java en a déjà plus la stature.
+D'abord, Java ne se limite pas au web. Si vous apprenez Java, vous pouvez en réalité vous diversifier : web, applications Android, applications de bureau, etc. Bien entendu, on pourrait rétorquer que, par exemple, Node.js peut aussi permettre de développer des applications de bureau. Mais soyons honnêtes, Node.js n'est pas, de base, calibré pour développer des applications "lourdes", là où Java en a déjà plus la stature (même si, reconnaissons-le, il a permis d'avoir Discord ou VSCode !).
 
-De plus, Java est un "poids moyen", entre les langages "légers" comme JavaScript et Python, mais tout de même moins complexe que C#/.NET. Dit autrement, là où JavaScript et Python sont des langages dits de **haut niveau**, proche du lange humain et C# un langage de plutôt **bas niveau**, plus proche du langage machine, Java se retrouve entre les deux, dans un un certain équilibre. L'atuce tient aussi au fait qu'entre Java et le langage machine, il y a la compilation en Bytecode qui rend votre code Java très proche du langage machine, nous y reviendrons.
+De plus, Java est un "poids moyen", entre les langages "légers" comme JavaScript et Python, mais tout de même moins complexe que C#/.NET. Dit autrement, là où JavaScript et Python sont des langages dits de **haut niveau**, proche du lange humain et C# un langage de plutôt **bas niveau**, plus proche du langage machine, Java se retrouve entre les deux, dans un un certain équilibre. L'astuce tient aussi au fait qu'entre Java et le langage machine, il y a la compilation en Bytecode qui rend votre code Java très proche du langage machine, nous y reviendrons.
 
 Java nous inculque de la rigueur, notamment par son aspect très explicite et verbeux, dans l'assignation des types de variables, le fait qu'il passe systématiquement par la programmation orientée objet, tout en évitant les aspects techniques comme la gestion manuellement de la mémoire ou les pointeurs qu'on retrouve beaucoup dans les langages de bas niveau.
 
@@ -82,7 +82,7 @@ Et soit dit en passant, faites ça, dans le doute, pour tout langage de script q
 
 Maintenant, partons du cas de figure probable où vous n'avez pas Java sur votre machine, et il faut l'installer.
 
-#### 1.3.2. Installer Java
+#### 1.3.2. Comment installer Java
 
 Partons de l'hypothèse où vous n'avez pas Java installé sur votre bécane, ce qui est par ailleurs le plus probable. Il faut donc l'installer. Et comme en informatique/programmation il y a de multiples voies pour résoudre un problème, il faut en choisir une. Pour ma part, j'ai choisi de passer par [le site d'Oracle](https://www.oracle.com/java/technologies/downloads/?er=221886), qui a racheté Sun Microsystems en 2010 et est donc propriétaire de Java, même s'il reste (pour l'instant ?) dans la philosophie open source qu'était  celle de Sun Microsystems.
 
@@ -172,21 +172,21 @@ Reste à aborder un point : si on doit installer  éventuellement d'extentions �
 
 Si vous ne voulez dé leopper qu'en Java, en faire votre seul alngage matin, midi et soir pour le reste de votre vie, envisagez au moins de les tester. Mais si vous venez d'une culture plus web dev avec des tas de fichiers écrits dans différents langages, alors VSC reste indiqué, et est malgré tout, un très bon IDE avec leq le on peut déjà faire beaucoup de choses en Java.
 
-## 2. " lelo, World!"
+## 2. " Hello, World!"
 
-Maintenant qu'on a présenté Java, nous allons voir comment il fonctionne concrètement à travers le tradition le affichage du message " lelo World !"
+Maintenant qu'on a présenté Java, nous allons voir comment il fonctionne concrètement à travers le tradition le affichage du message " Hello World !"
 
 Voilà comment on fait en javascript :
 
 ```javascript
-console.log(" lelo, World!");
+console.log("Hello, World!");
 ```
 
 Et ici, en PHP :
 
 ```PHP
 <?php
-echo " lelo, World!";
+echo "Hello, World!";
 ?>
 ```
 
@@ -195,9 +195,9 @@ On remarque que ça tient globalement en peu de lignes : parfois une, parfois tr
 En Java, c'est une autre paire de manches :
 
 ```Java
-public class  leloWorld {
+public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println(" lelo, World!");
+        System.out.println("Hello, World!");
     }
 }
 ```
@@ -206,22 +206,22 @@ Le premier choc passé, décomposons !
 
 ### 2.1. Anatomie d'une classe intimidante
 
-On part là sur cinq lignes et beaucoup, beaucoup de texte, comparé à JS ou PHP ! Mais tentons de décomposer. Au milieu, on a l'instruction qui demande au système d'afficher du texte : " lelo, World !" ; d'où la suite de caractères "System.out.println". Petite remarque en passant : Java est sensible à la casse, attention à être scrupuleux avec vos majuscules !
+On part là sur cinq lignes et beaucoup, beaucoup de texte, comparé à JS ou PHP ! Mais tentons de décomposer. Au milieu, on a l'instruction qui demande au système d'afficher du texte : " Hello, World !" ; d'où la suite de caractères "System.out.println". Petite remarque en passant : Java est sensible à la casse, attention à être scrupuleux avec vos majuscules !
 
-En première ligne, on voit un mot qui rappelle une notion vue en JS, les **Classes** ! Ici, elle est publique, c'est-à-dire que tout le monde a accès à son contenu (j'expliquerai plus tard comment ça fonctionne). En seconde ligne, nous avons la méthode principale de la classe. Nous reviendrons sur cette ligne plus tard. En résumé, on a une classe " leloWorld" qui a pour but d'afficher " lelo, World !" dans la console.
+En première ligne, on voit un mot qui rappelle une notion vue en JS, les **Classes** ! Ici, elle est publique, c'est-à-dire que tout le monde a accès à son contenu (j'expliquerai plus tard comment ça fonctionne). En seconde ligne, nous avons la méthode principale de la classe. Nous reviendrons sur cette ligne plus tard. En résumé, on a une classe " HelloWorld" qui a pour but d'afficher " Hello, World !" dans la console.
 
 ### 2.2. Compiler, exécuter
 
-Pour commencer, créez un dossier Java dans leq le vous allez mettre ce tuto, et créez un document " leloworld.java". Pour l'instant, dans la barre de gauche sur VSCode, vous aurez ceci :
+Pour commencer, créez un dossier Java dans leq le vous allez mettre ce tuto, et créez un document " helloworld.java". Pour l'instant, dans la barre de gauche sur VSCode, vous aurez ceci :
 
 ![document créé](images/partie2/Capture-creation-fichier.png)
 
-Maintenant, copiez dedans le code du " lelo, World!" :
+Maintenant, copiez dedans le code du "Hello, World!" :
 
 ```Java
-public class  leloWorld {
+public class  HelloWorld {
     public static void main(String[] args) {
-        System.out.println(" lelo, World!");
+        System.out.println("Hello, World!");
     }
 }
 ```
@@ -232,35 +232,35 @@ Et observez la zone de gauche :
 
 Le fichier a changé de nom tout seul et pris  leui de la classe que vous avez créée ! Regardez, on passe en Ca leCase ! Mais pour ça, il faut remercier les extensions pour Java que propose VSCode quand on utilise le langage pour la première fois : il semble que les extensions installées pour VSCode adaptent automatiquement le nom du fichier en fonction de la classe principale qu'il contient. Si ces extensions ne sont pas installées, et que le nom du fichier n'est pas  leui de la classe qu'il contient, la commande `javac nomDuFichier.java` ne fonctionnerait pas non plus. Encore une fois, ce sont les extensions qui nous retirent une épine du pied,  leon toute vraisemblance.
 
-Mais maintenant, si vous entrez dans votre console "java  leloWorld" (voyez la similarité avec un "node fichier.js", commande qui nous permettait de lancer des fichiers sous Node.JS !), vous allez avoir ce message d'erreur :
+Mais maintenant, si vous entrez dans votre console "java  HelloWorld" (voyez la similarité avec un "node fichier.js", commande qui nous permettait de lancer des fichiers sous Node.JS !), vous allez avoir ce message d'erreur :
 
 ![document non compilé](images/partie2/Document-erreur.png)
 
 Ou de manière textuelle :
 
-"$ java  leloWorld
-Error: Could not find or load main class  leloWorld
-Caused by: java.lang.ClassNotFoundException:  leloWorld"
+"$ java  HelloWorld
+Error: Could not find or load main class  HelloWorld
+Caused by: java.lang.ClassNotFoundException:  HelloWorld"
 
 Il manque en fait une étape : le passage au Bytecode, avec la **compilation** ! Et pour compiler, vous devez indiquer dans la console :
 
-*javac  leloWorld.java*, ce qui va créer dans la zone de gauche le fichier "intermédiaire" *HelloWorld.class* qui es ten réalité du bytecode, le langage intermédiare entre le Java et le binaire et qui lui sera lu dans la Java Virtual Machine pour petre éxécuté. Ici, vous pouvez le voir au dessus de  leloWorld.java :
+*javac  HelloWorld.java*, ce qui va créer dans la zone de gauche le fichier "intermédiaire" *HelloWorld.class* qui es ten réalité du bytecode, le langage intermédiare entre le Java et le binaire et qui lui sera lu dans la Java Virtual Machine pour petre éxécuté. Ici, vous pouvez le voir au dessus de  HelloWorld.java :
 
 ![fichier class](images/partie2/Fichier-class.png)
 
-Maintenant seulement vous pouvez entrer "java  leloWorld" dans la console et afficher le résultat !
+Maintenant seulement vous pouvez entrer "java  HelloWorld" dans la console et afficher le résultat !
 
-![fichier exécuté](images/partie2/Java- lelo-world.png)
+![fichier exécuté](images/partie2/Java-hello-world.png)
 
 Et en text le, nous avons ceci :
 
 benoi@Benoit MINGW64 ~/OneDrive/Bureau/Java
-$ java  leloWorld
- lelo, World!
+$ java  HelloWorld
+ Hello, World!
 
 Vous voyez, comapré à JavaScript, nous avons une étape intermédiaire pour exécuter le programme, la *compilation* qui va traduire votre fichier ;java dans un fichier qui sera interprétable par la machine !
 
-D'ailleurs, si vous voulez voir à quoi peut ressembler du Bytecode, ouvrez  leloWorld.class avec le Bloc Note, et observez :
+D'ailleurs, si vous voulez voir à quoi peut ressembler du Bytecode, ouvrez  HelloWorld.class avec le Bloc Note, et observez :
 
 ![Bytecode](images/partie2/Bytecode.png)
 
@@ -367,12 +367,12 @@ Ces variables primitives sont les booléens, caractères uniques, chiffres et ch
 
 C'est sans doute la valeur la plus simple, y compris dans la vie de tous les jours. Il s'agit de l'alternative entre "oui" et "non", "vrai" ou "faux". il s'agit d'une notion a priori simplissime, mais en dé leoppement, énormément de choses dans un code, si pas la majorité, en dépend. A vrai dire, la base même de l'informatique, le langage binaire fait de 0 et de 1 est une suite de booléens. Et si on se resitue dans des langages de programmation que nous arrivons à lire et comprendre, les booléens sont la base même des cascades de conditions qui se vérifient ou non que nous écrivons (nous reviendrons plus bas sur cette notion de *condition*).
 
-Mais voyons en Java comment on déclare une variable booléenne, en reprenant notre classe  leloWorld qui se situe dans notre fichier java éponyme et stockons dedans une variable qu'on va ap leer "capitainePresent", pour savoir s'il est sur le bateau.
+Mais voyons en Java comment on déclare une variable booléenne, en reprenant notre classe HelloWorld qui se situe dans notre fichier java éponyme et stockons dedans une variable qu'on va ap leer "capitainePresent", pour savoir s'il est sur le bateau.
 
 ```java
-public class  leloWorld {
+public class  HelloWorld {
     public static void main(String[] args) {
-        System.out.println(" lelo, World!");
+        System.out.println("Hello, World!");
         boolean capitainePresent;       
     }
 }
@@ -381,9 +381,9 @@ public class  leloWorld {
 Vous voyez, pour déclarer une variable, on indique d'abord son type, ici `boolean` et derrière on met le nom de la variable. Maintenant, on va lui assigner la valeur "true" (en opposition à la valeur "false") :
 
 ```java
-public class  leloWorld {
+public class  HelloWorld {
     public static void main(String[] args) {
-        System.out.println(" lelo, World!");
+        System.out.println("Hello, World!");
         boolean capitainePresent = true;       
     }
 }
@@ -404,9 +404,9 @@ Si Java a innové en gérant la mémoire de manière autonome sans plus en faire
 Par exemple, on va ajouter la variable de type `char` à notre classe  lelWorld en décrétant que notre capitaine est une femme, avec la variable "char genreCaptaine = 'F'" :
 
 ```java
-public class  leloWorld {
+public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println(" lelo, World!");
+        System.out.println("Hello, World!");
         boolean capitainePresent = true;     
         char genreCapitaine = 'F';  
     }
@@ -432,10 +432,10 @@ Même avec les capacités de mémoire actuelles, il est important de choisir le 
 
 Enfin, utiliser le bon type de variable rend votre code plus clair et plus lisible.
 
-Reprenons notre classe  leloWorld, que nous dé leoppons. Maintenant, en plus de stocker des variables non utilisées directement, nous allons afficher d'autres messages en plus de " lelo, world!", reprenant la présence du capitaine sur le vaisseau, son genre, et d'autres données numériques :
+Reprenons notre classe HelloWorld, que nous dé leoppons. Maintenant, en plus de stocker des variables non utilisées directement, nous allons afficher d'autres messages en plus de "Hello, world!", reprenant la présence du capitaine sur le vaisseau, son genre, et d'autres données numériques :
 
 ```Java
-public class  leloWorld {
+public class HelloWorld {
     public static void main(String[] args) {
         // Présence du capitaine
         boolean capitainePresent = true;
@@ -456,7 +456,7 @@ public class  leloWorld {
         long distanceParcourue = 123456789012345L;
 
         // Affichage des informations du capitaine
-        System.out.println(" lelo, World!");
+        System.out.println("Hello, World!");
         System.out.println("Capitaine présent : " + capitainePresent);
         System.out.println("Genre du capitaine : " + genreCapitaine);
         System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
@@ -481,7 +481,7 @@ Si ce n'est pas le cas, cliquez dessus, puis dans le menu en haut de VSC sur "Ro
 
 ![Une partie des encodages possibles...](images/partie3/EncodagesPossibles.png)
 
-Maintenant, on retente la compilation en javac, mais avec une eptite instruction en plus pour bien préciser qu'on utilise lors de la compilation l'encodage UTF-8 comme ceci : `$ javac -encoding UTF-8  leloWorld.java`et alors le script nous sortira nos lignes de textes avec les accents pris en charge :
+Maintenant, on retente la compilation en javac, mais avec une eptite instruction en plus pour bien préciser qu'on utilise lors de la compilation l'encodage UTF-8 comme ceci : `$ javac -encoding UTF-8 HelloWorld.java`et alors le script nous sortira nos lignes de textes avec les accents pris en charge :
 
 ![Compilation en prenant en compte l'UTF8](images/partie3/JavacAvecUTF8.png)
 
@@ -514,7 +514,7 @@ double températureVideSpacial = 0.00000000000000000000000000000000000000001;
 Ajoutons ces deux valeurs à notre classe d'exemple et voyons ce que ça donne :
 
 ```Java
-public class  leloWorld {
+public class HelloWorld {
     public static void main(String[] args) {
         // Présence du capitaine
         boolean capitainePresent = true;
@@ -541,7 +541,7 @@ public class  leloWorld {
         double temperatureVideSpatial = 0.00000000000000000000000000000000000000001;
 
         // Affichage des informations du capitaine
-        System.out.println(" lelo, World!");
+        System.out.println("Hello, World!");
         System.out.println("Capitaine présent : " + capitainePresent);
         System.out.println("Genre du capitaine : " + genreCapitaine);
         System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
@@ -558,10 +558,10 @@ public class  leloWorld {
 
 Nous avons vu jusque maintenant, avec les variables primitives, qu'en Java, quand on déclare une variable, on doit d'abord préciser son type. Cependant, ce n'est pas parce qu'on déclare une variable qu'on doit forcément lui attribuer une valeur. Une variable peut très bien être déclarée, mais non initialisée. En d'autres termes, on peut dire qu'on va créer une variable, lui assigner un type, lui donner le nom, mais lui donner aucune valeur.
 
-Dans notre exemple, ce sera, mettons, le nombre de thermo-conteneurs dans notre vaisseau spatial, qu'on va ajouter dans notre classe " leloWorld" sans l'initialiser :
+Dans notre exemple, ce sera, mettons, le nombre de thermo-conteneurs dans notre vaisseau spatial, qu'on va ajouter dans notre classe "HelloWorld" sans l'initialiser :
 
 ```Java
-public class  leloWorld {
+public class HelloWorld {
     public static void main(String[] args) {
         // Présence du capitaine
         boolean capitainePresent = true;
@@ -592,7 +592,7 @@ public class  leloWorld {
 
 
         // Affichage des informations du capitaine
-        System.out.println(" lelo, World!");
+        System.out.println("Hello, World!");
         System.out.println("Capitaine présent : " + capitainePresent);
         System.out.println("Genre du capitaine : " + genreCapitaine);
         System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
@@ -608,7 +608,7 @@ public class  leloWorld {
 Ainsi, notre vaisseau spatial a déjà une variable pour le nombre de conteneurs qu'il va transporter, mais sans qu'on doive en déterminer la quantité. Pour y attribuer une valeur, on peut faire ça après coup. Voilà comment s'écrit cette attribution de valeur dans notre exemple :
 
 ```Java
-public class  leloWorld {
+public class HelloWorld {
     public static void main(String[] args) {
         // Présence du capitaine
         boolean capitainePresent = true;
@@ -642,7 +642,7 @@ public class  leloWorld {
 
 
         // Affichage des informations du capitaine
-        System.out.println(" lelo, World!");
+        System.out.println("Hello, World!");
         System.out.println("Capitaine présent : " + capitainePresent);
         System.out.println("Genre du capitaine : " + genreCapitaine);
         System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
@@ -701,10 +701,10 @@ Les `String` se déclarent comme des variables classiques; et lors du typage de 
 
 Pour les habitués de JS, ce que vous êtes rpobablement, vous remarquerez qu'en Java, les guillemets simples ou doubles ne sont pas utilisés de manière indistincte, mais ont des usages précis en fonction de la situation : les simples pour les `char`, les doubles pour les `String`.
 
-Voici un exemple de `String` ajoutée à notre classe  leloWorld :
+Voici un exemple de `String` ajoutée à notre classe HelloWorld :
 
 ```Java
-public class  leloWorld {
+public class HelloWorld {
     public static void main(String[] args) {
         // Présence du capitaine
         boolean capitainePresent = true;
@@ -744,7 +744,7 @@ public class  leloWorld {
 
 
         // Affichage des informations du capitaine
-        System.out.println(" lelo, World!");
+        System.out.println("Hello, World!");
         System.out.println("Capitaine présent : " + capitainePresent);
         System.out.println("Genre du capitaine : " + genreCapitaine);
         System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
@@ -768,10 +768,10 @@ Prenons par exemple la devise de notre vaisseau spatial poétiquement nommé "L'
 String deviseVaisseau = "\"Guidés par Shamash\"";
 ```
 
-Et voilà ce que ça donne dans notre classe  leloWorld :
+Et voilà ce que ça donne dans notre classe HelloWorld :
 
 ```Java
-public class  leloWorld {
+public class HelloWorld {
     public static void main(String[] args) {
         // Présence du capitaine
         boolean capitainePresent = true;
@@ -813,7 +813,7 @@ public class  leloWorld {
         String deviseVaisseau = "\"Guidés par Shamash\"";
 
         // Affichage des informations du capitaine
-        System.out.println(" lelo, World!");
+        System.out.println("Hello, World!");
         System.out.println("Capitaine présent : " + capitainePresent);
         System.out.println("Genre du capitaine : " + genreCapitaine);
         System.out.println("Âge du capitaine : " + ageCapitaine + " ans");
@@ -1309,6 +1309,119 @@ Si vous regardez bien l'exécutions, vous vous rendrez compte que des variables 
 
 Donc si vous devez afficher dans une `String` la somme entre deux valeurs numériques issues de deux variables différentes, soit passez apr une variable intermédiaire, soit par des parenthèses dans votre `System.out.println` qui vont gérer, priorité des opérations oblige, cette somme, avant d'en concaténer le résultat à votre `String` !
 
-### 4.6. Conclusion sur les opérateurs
+### 4.6. Le formatage de chaînes
 
-Nous voici donc arrivés à la fin de la liste des opérateurs les plus fréquents en Java. Grâce à ceux-ci, nous aovns déjà le potentiel pour faire de nombreuses. La prochaine opération consistera à voir els boucles, les conditionnelles et les opérateurs ternaires qui vous permettront d'associer tout ce que nous avons vu pour en finalité faire des premiers programmes !
+Introduisons une notion qui sera bien plus largement développée par la suite, le **formatage de chaînes**. Dans tous les exemples précédents, nous faisions des concaténations entre `String`, variables `int`, comme sur cette ligne :
+
+```Java
+int nombre1 = 5;
+int nombre2 = 3;
+int somme = nombre1 + nombre2;
+System.out.println("L'addition de " + nombre1 + " et " + nombre2 + " est : " + somme);
+```
+
+Là, nous avons la concaténation d'une `String`, d'un `int`, d'une `String`, d'un `int` et enfin d'un `int`.
+
+Dans les versions précédentes de Java, le compilateur créait une `String` intermédiaire à chaque nouvelle 'entrée' de la concaténation, ce qui pouvait poser des problèmes de performance. Dans notre exemple, ça donnait : `"L'addition de 5"`, puis `"L'addition de 5 et "`, puis `"L'addition de 5 et 3"`, et ainsi de suite, au lieu de de sortir une String unique, directement.
+
+Bien que cela ait pu poser des problèmes de performance dans les versions plus anciennes de Java, ce n'est plus le cas aujourd'hui grâce aux améliorations des capacités des machines et à l'optimisation des compilateurs Java (JAVAC).
+
+Cependant, niveau lisibilité, ce n'est pas ce qu'il se fait de mieux. Or, Java, à l'image des **templates literals** de JavaScript, peut écrire une seule `String` en intégrant des *variables* dedans !
+
+Pour rappel, voilà comment s'écrit le *Template literal* en JavaScript :
+
+```JavaScript
+let age = 35;
+let message = `J'ai ${age} ans et toutes mes dents`;
+console.log(message);
+```
+
+Vous voyez que la variable est directement inclue dans la `String`.
+
+Le **formatage de chaînes** permet la même chose en Java. VOici la classe "ToutesMesDents" que nous allons analyser :
+
+```Java
+public class ToutesMesDents {
+
+    public static void main(String[] args) {
+        // Définir l'âge comme une variable
+        int age = 35;
+
+        // Utiliser String.format pour formater la chaîne de caractères
+        String message = String.format("J'ai %d ans et toutes mes dents", age);
+
+        // Afficher le message
+        System.out.println(message);
+    }
+}
+```
+
+Regardons cette ligne en particulier :
+
+```Java
+System.out.printf("J'ai %d ans et toutes mes dents !", age);
+```
+
+Si vous regardez bien cette ligne, vous verrez différents éléments :
+
+- Le `printf` qui signifie "print formated", qui est distinct du `println` que nous utilisons d'habitude qui signifie "print line". On passe ici de lignes classiques à quelque chose de *formatté*.
+
+- Le `%d` qui se décompose entre le signe **%** qui signifie qu'on va inclure une variable, et le **d**, qui signifie son format, ici un nombre entier en base 10.
+
+    Les formats de variables les plus courants à connaitre pour l'instant sont les suivants :
+
+    %d --> Nombre entier en base 10 (c'est à dire les long, int, short, byte).
+    %f --> Nombre à virgule flotante (c'est à dire, les float et les double).
+    %s --> Chaîne de caractères.
+    %c --> Caractère unique.
+    %b --> Booléen.
+
+- A la fin de la `String`, une virgule et le nom de la variable qui contient la valeur entière, histoire de dire à quoi `%d` renvoie.
+
+Voilà ce que vous aurez après compilation et exécution du code :
+
+![Exécution du fichier ToutesMesDents](images/partie4/ToutesMesDents.png)
+
+A noter que le formatage permet bien d'inclure plusieurs variables. Ils suffit alors de les ajouter dans l'ordre où elles apparaissent successivement dans la `String`, après la virgule, comme dans cet exemple :
+
+```Java
+public class ToutesMesDents2 {
+    public static void main(String[] args) {
+        // Définir l'âge et le nom comme des variables
+        int age = 35;
+        String name = "Benoît";
+
+        // Utiliser String.format pour créer une chaîne de caractères formattée
+        String message = String.format("Bonjour, je m'appelle %s et j'ai %d ans et toutes mes dents.", name, age);
+
+        // Afficher le message
+        System.out.println(message);
+    }
+}
+```
+
+![Exécution du fichier ToutesMesDents2](images/partie4/ToutesMesDents2.png)
+
+Si vous voulez exécuter les codes d'exemple, vous trouverez tous les fichiers dans le repo ! N'hésitez pas par ailleurs à les modifier par vous-même, en leur faisant afficher ce que vous voulez, afin d'exercer ce que nous avons vu ici !
+
+### 4.7. Conclusion sur les opérateurs
+
+Nous voici donc arrivés à la fin de la liste des opérateurs les plus fréquents en Java. Grâce à ceux-ci, nous aovns déjà le potentiel pour faire de nombreuses. La prochaine opération consistera à voir les boucles, les conditionnelles et les opérateurs ternaires qui vous permettront d'associer tout ce que nous avons vu pour en finalité faire des premiers programmes.
+
+## 5. La suite
+
+Après réflexion, je décide d'aborder la suite de ce tutoriel dans une seconde partie. 
+
+En effet, nous aovns vu là toute une série de points théoriques qui sont globalement communs à tous els lengages de programmation, quelques aprticularités de Java mises à part. Et si vous regardez les classes écrites jusque maintenant, on ne s'est jamais vraiment intéressés au "cadre" qui entoure au sens propre les variables que nous avons utilisé, et  les opérations effectuées.
+
+Or, toucher aux boucles, aux conditions et assez rapidement aux classes va nous amener à devoir regarder ce cadre de plus près. Vous vous rappelez du tout premeir code dans "HelloWorld.java" ?
+
+```Java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+Travailler sur les boucles condition, et les objets va nous demander de nous intéresser aux jeux d'accolades et aux lignes pour le moins étranges de par leurs expressions telles que "public claass" ou "public static void main", points que nous aborderons très vite dans la seconde partie de ce tutoriel !
