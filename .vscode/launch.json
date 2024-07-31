@@ -1,0 +1,142 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "request": "attach",
+            "name": "Attach by Process ID",
+            "processId": "${command:PickJavaProcess}"
+        },
+
+
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "BureauDeChange",
+            "request": "launch",
+            "mainClass": "BureauDeChange",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "Calculs",
+            "request": "launch",
+            "mainClass": "Calculs",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "ComparateursLogiques",
+            "request": "launch",
+            "mainClass": "ComparateursLogiques",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "ComparateursRelationnels",
+            "request": "launch",
+            "mainClass": "ComparateursRelationnels",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "ConcatenerNombres",
+            "request": "launch",
+            "mainClass": "ConcatenerNombres",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "HelloUniverse",
+            "request": "launch",
+            "mainClass": "HelloUniverse",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "HelloWorld",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "IncrementationExample",
+            "request": "launch",
+            "mainClass": "IncrementationExample",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "IncrementationExample2",
+            "request": "launch",
+            "mainClass": "IncrementationExample2",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "LocalToGlobal",
+            "request": "launch",
+            "mainClass": "LocalToGlobal",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "MacumbaFiesta",
+            "request": "launch",
+            "mainClass": "MacumbaFiesta",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "MacumbaFiesta2",
+            "request": "launch",
+            "mainClass": "MacumbaFiesta2",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "MardukVolant",
+            "request": "launch",
+            "mainClass": "MardukVolant",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "OperationsDistinctes",
+            "request": "launch",
+            "mainClass": "OperationsDistinctes",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "ToutesMesDents",
+            "request": "launch",
+            "mainClass": "ToutesMesDents",
+            "projectName": "JAVA_48bbb735"
+        },
+        {
+            "type": "java",
+            "name": "ToutesMesDents2",
+            "request": "launch",
+            "mainClass": "ToutesMesDents2",
+            "projectName": "JAVA_48bbb735"
+        }
+    ]
+}
