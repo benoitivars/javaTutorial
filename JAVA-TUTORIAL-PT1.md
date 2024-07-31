@@ -162,7 +162,7 @@ Vous voyez, j'ai maintenant la version JDK 17 d'Adoptium comme version de Java u
 
 Maintenant qu'on a installé différentes versions du JDK de Java et choisi  celle qu'on veut utiliser, reste à installer les extensions pour VSC afin d'utiliser au mieux Java ! Il est même probable que VSC vous les propose par lui-même quand il détecte que vous allez coder en Java, ou que vous créez un document Java.
 
-Et toutes ces extensions sont réunies dans un "pack", le "Extension pack for Java", qui va colorer votre code, gérer des fonctionnalités typiques de Java, proposer un déboguer propre à Java, in manager de projets, et j'en passe.
+Et toutes ces extensions sont réunies dans un "pack", le "Extension pack for Java", qui va colorer votre code, gérer des fonctionnalités typiques de Java, proposer un débogueur propre à Java, in manager de projets, et j'en passe.
 
 Avec tout ça, vous serez paré pour partir à la découverte du Java !
 
