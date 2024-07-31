@@ -358,6 +358,6 @@ Le mot-clé ici qui doit vous intéresser ici est **return;** qui sert à marque
 
 ![Exécution du fichier MacumbaFiesta, avec une condition préalable](images/partie5/MacumbaFiestaConditionPrealable.png)
 
-La seule ligne affichée est celle concernée par le "if" isolé : si l'âge avait été bon, le programme n'aurait pas affiché ce message et serait passé au suivant. Ici, vu que la condition d'âge n'était pas remplie, le programme a affiché le texte prévu pour ce cas, et n'est pas allé plus loin grâce à l'instruction **return**..
+La seule ligne affichée est celle concernée par le "if" isolé : si l'âge avait été bon, le programme n'aurait pas affiché ce message et serait passé au suivant. Ici, vu que la condition d'âge n'était pas remplie, le programme a affiché le texte prévu pour ce cas, et n'est pas allé plus loin grâce à l'instruction **return**.
 
  Retenez bien ce `return`, il reviendra un peu plus tard pour les *Switch* !
