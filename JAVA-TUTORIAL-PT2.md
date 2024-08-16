@@ -708,7 +708,7 @@ public class PassWord {
         String essai = "";  // Initialisation de la variable essai
         int nombreDeTentatives = 0;  // Initialisation du compteur de tentatives
 
-        while (!essai.equals(motDePasse)) {
+        while (!essai.equals(motDePasse)) { // Usage de la émthode equals qui compare deux String
             System.out.print("Devinez le mot de passe : ");
             essai = scanner.nextLine();  // Lire l'entrée utilisateur comme une chaîne
             nombreDeTentatives++;  // Incrémente le compteur à chaque tentative
@@ -725,7 +725,22 @@ Voilà ce que ce code va donner :
 
 Avant de vérifier une quelconque condition pour entrer un mot de passe est d'au moins permettre çà l'utilisateur d'entrer quelque chose. La vérification, en toute logique, ne survient qu'après.
 
-## 3. La suite
+**NB :** J'utilise ici ce qu'on appelle la *méthode equals*, qui sert à vérifier si deux objets, comme des chaînes de caractères, ont la même valeur. Pour les types primitifs (comme `int`, `float`, etc.), on utilise les opérateurs relationnels comme `==` pour comparer les valeurs. Nous reviendrons dessus de manière plus approfondie ultérieurement. Pour l'instant, retenez que ça sert à vérifier si deux `String` sont identiques.
+
+## 3. Exercice de synthèse
+
+Pour conclure cette seconde partie du tutoriel, je vous propose un exercice de synthèse basé sur le code de vérification du mot de passe. Dans cet exercice, vous allez limiter l'utilisateur à trois tentatives, ce qui implique d'ajouter une deuxième condition à la boucle `while`. Vous devrez également déclarer une variable pour compter le nombre de tentatives, ainsi qu'une autre pour vérifier si la réponse est correcte.
+
+**Indices :**
+
+- Utilisez un compteur pour suivre le nombre de tentatives.
+- Combinez les conditions de la boucle avec un opérateur logique (`&&`).
+- Utilisez une variable booléenne pour indiquer si la réponse est correcte ou non.
+- Utilisez la méthode `equals` pour comparer les chaînes de caractères.
+
+Cet exercice vous permettra de manipuler différents types de variables, ainsi que divers opérateurs logiques, arithmétiques et relationnels, tout en renforçant votre compréhension des structures conditionnelles.
+
+## 4. La suite
 
 Nous voilà arrivés au bout de cette autre section du tutoriel, où nous avons attaqué un gros bout, consacré aux strictures conditionnelles, au boucles et tout ce qui s'y rapproche. Avec ce que nous avons vu dans la première aprtie du tutorial, nous possédons maintenant tous les outils de base pour pouvoir effectuer de nombreuses opérations.
 
